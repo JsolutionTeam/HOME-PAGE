@@ -1,11 +1,3 @@
-<?php
-	//테스트용 주석
-	$co1_arr = get_depth1_idxmenu("01_co","Y"); // 두번째 인자 아무거나 넣을시 하위카테고리 유무상관없이 자기 cid가져옴. 없을시 첫번째 자식 cid가져옴
-	$co2_arr = get_depth1_idxmenu("02_te","Y");
-	$co3_arr = get_depth1_idxmenu("03_el","Y");
-	$co4_arr = get_depth1_idxmenu("04_ic");
-?>
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
