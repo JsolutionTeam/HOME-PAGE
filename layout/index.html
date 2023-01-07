@@ -1,0 +1,723 @@
+
+
+<link href="../glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="../swiper/swiper-bundle.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="../sos/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="../sos/slick/slick-theme.css"/>
+<div class="section">
+	<!--
+	<div id="container">
+		<DIV class="content main" id="contentWrapMain">
+			<DIV class="visual_copy">
+				<DIV class="slogan"><IMG src="../image/main_txt.png"></DIV>
+				<A class="btn_view" href="/about.php" target="_self">VIEW</A>
+			</DIV>
+			<DIV class="visual">
+				<DIV class="slide">
+					<IMG alt="" src="../image/mcall.jpg">
+				</DIV>
+				<DIV class="slide">
+					<IMG alt="" src="../image/iam.jpg">
+				</DIV>
+				<DIV class="slide">
+					<IMG alt="" src="../image/oke.jpg">
+				</DIV>
+
+				<!-- 슬라이더 S
+				<DIV class="slide">
+					<IMG alt="" src="../image/v1.jpg" data-type="1" data-url="/mcall.php">
+				</DIV>
+				<DIV class="slide">
+					<IMG alt="" src="../image/v2.jpg" data-type="2" data-url="/iam.php">
+				</DIV>
+				<DIV class="slide">
+					<IMG alt="" src="../image/v3.jpg" data-type="3" data-url="/history.php">
+				</DIV>
+				<DIV class="slide">
+					<IMG alt="" src="../image/v4.jpg" data-type="4" data-url="/waiting.php">
+				</DIV>
+				<DIV class="slide">
+					<IMG alt="" src="../image/v5.jpg" data-type="5" data-url="/dtm.php">
+				</DIV>
+			</DIV>
+		</div>
+	</div>
+	-->
+
+
+<div class="slider_wrap" style="width:100%;float:left;background:#fff;">
+	<div id="slider-div">
+		<div style="background: #b7bfe3; /* Old browsers */
+background: -moz-linear-gradient(45deg,  #b7bfe3 0%, #e3d4f4 40%, #f9def9 68%, #ffbbcc 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(45deg,  #b7bfe3 0%,#e3d4f4 40%,#f9def9 68%,#ffbbcc 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(45deg,  #b7bfe3 0%,#e3d4f4 40%,#f9def9 68%,#ffbbcc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7bfe3', endColorstr='#ffbbcc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+">
+			<img src="../image/mcall_obj.png">
+		</div>
+		<div style="background: #9ED6CE"><img src="../image/iam_obj.png"></div>
+		<div style="background:#313c50"><img src="../image/oke_obj.png"></div> 
+	</div>
+</div>
+
+<script> 
+$(function(){
+	$('#slider-div').slick({
+		slide: 'div',		//슬라이드 되어야 할 태그 ex) div, li 
+		infinite : true, 	//무한 반복 옵션	 
+		slidesToShow : 1,		// 한 화면에 보여질 컨텐츠 개수
+		slidesToScroll : 1,		//스크롤 한번에 움직일 컨텐츠 개수
+		speed : 1000,	 // 다음 버튼 누르고 다음 화면 뜨는데까지 걸리는 시간(ms)
+		arrows : false, 		// 옆으로 이동하는 화살표 표시 여부
+		dots : false, 		// 스크롤바 아래 점으로 페이지네이션 여부
+		autoplay : true,			// 자동 스크롤 사용 여부
+		autoplaySpeed : 2000, 		// 자동 스크롤 시 다음으로 넘어가는데 걸리는 시간 (ms)
+		pauseOnHover : false,		// 슬라이드 이동	시 마우스 호버하면 슬라이더 멈추게 설정
+		vertical : false,		// 세로 방향 슬라이드 옵션
+		prevArrow : "<button type='button' class='slick-prev'>Previous</button>",		// 이전 화살표 모양 설정
+		nextArrow : "<button type='button' class='slick-next'>Next</button>",		// 다음 화살표 모양 설정
+		dotsClass : "slick-dots", 	//아래 나오는 페이지네이션(점) css class 지정
+		draggable : true, 	//드래그 가능 여부 
+		fade : true
+		/*
+		responsive: [ // 반응형 웹 구현 옵션
+			{  
+				breakpoint: 960, //화면 사이즈 960px
+				settings: {
+					//위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+					slidesToShow:3 
+				} 
+			},
+			{ 
+				breakpoint: 768, //화면 사이즈 768px
+				settings: {	
+					//위에 옵션이 디폴트 , 여기에 추가하면 그걸로 변경
+					slidesToShow:2 
+				} 
+			}
+		]
+		*/
+	});
+})
+</script>
+		<div class="contents main">
+			<!--
+			<div class="main_customer_wrap">
+				<div class="main_customer">
+					<div class="call_center">
+						<h3>상담전용 콜센터</h3>
+						<strong>1644-3950</strong>
+						<span>상담시간 10:00 AM ~ 6:00 PM</span>
+					</div>
+					<form method="post" onsubmit="return f_check();" action="estimate_result.php">
+						<div class="group_center">
+							<input type="hidden" name="mod" value="01_ho" />
+							<ul>
+								<li><input id="m_solution" type="radio" name="cid" value="ICT솔루션"><label for="m_solution">ICT솔루션<span></span></label></li>
+								<li><input id="m_comm" type="radio" name="cid" value="통신상품" checked="checked"><label for="m_comm">통신상품(유선/무선상품)<span></span></label></li>
+								<li><input id="m_elec" type="radio" name="cid" value="전자제품"><label for="m_elec">전자제품<span></span></label></li>
+								<li><input id="m_etcc" type="radio" name="cid" value="m_etc" style="display:none;"><label class="etc" for="m_etc">기타</label><input id="m_etc" type="text" name="etc" placeholder="작성해주세요"></li>
+							</ul>
+							<script>
+								$( "#m_etc" ).focus(function(){
+									$("input[name='chk_box']:checked").prop("checked", false);
+									$("#m_etcc").prop("checked", true);
+								});
+							</script>
+							<div class="agree_area">
+								<input id="m_agree" type="checkbox" name="agr_box" value="m_agree"><label for="m_agree"><span></span>고객정보수집 동의</label>
+								<a href="javascript:;" onclick="show_agreemnet();">전문보기</a>
+								<div class="info_collection_layer" style="display:none">
+									<h2>고객정보수집 동의</h2>
+									<p>제이솔루션(이하 '회사'라 한다)은 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.<br>회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.<br>(본 방침은부터 2018년 01월 01일부터 시행됩니다.)</p>
+									<textarea name="" rows="" cols=""><?php include_once("./inc/info_agree.php");?></textarea>
+									<button type="button" onclick="hide_agreement();">닫기</button>
+								</div>
+								<script>
+									var checked_chk = false;
+									$("#m_agree").on("click", function () {
+										if(checked_chk == false) {
+											alert('전문보기를 클릭해서 내용을 확인해주세요.');
+											$("#m_agree").prop("checked", false);
+										}
+									});
+									function show_agreemnet () {
+										$(".info_collection_layer").show();
+										$(".info_collection_bg").show();
+									}
+									function hide_agreement () {
+										$(".info_collection_layer").hide();
+										$(".info_collection_bg").hide();
+										checked_chk = true;
+									}
+								</script>
+								<div class="info_collection_bg" style="display:none"></div>
+							</div>
+						</div>
+						<div class="write_center">
+							<ul>
+								<li><label class="wr_la" for="wr_company">회사명</label><input id="wr_company" type="text" name="wr_company" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_name">담당자</label><input id="wr_name" type="text" name="wr_name" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_division">부서</label><input id="wr_division" type="text" name="wr_division" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_position">직책</label><input id="wr_position" type="text" name="wr_position" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_tel">연락처</label><input id="wr_tel" type="text" name="wr_tel" placeholder="숫자만 작성" required></li>
+								<li><label class="wr_la" for="wr_email">이메일</label><input id="wr_email" type="email" name="wr_email" value="" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_addr">주소</label><input id="wr_addr" type="text" name="wr_addr" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_etc">기타</label><input id="wr_etc" type="text" name="wr_etc" value="" placeholder="생년월일, 이용 통신사, 휴대폰 기종" ></li>
+								<span class="tip">※ 모바일 신청시 기타란에 생년월일, 사용중인 통신사 및 휴대폰 기종 기재부탁드립니다.</span>
+							</ul>
+							<div class="bt_wrap">
+								<input class="bt_main_submit" type="submit" value="상담 신청">
+							</div>
+						</div>
+					</form>
+					<script>
+						function f_check() {
+							if($("#m_agree").prop("checked") == true) {
+								return true;
+							} else {
+								alert('고객정보수집을 동의해주셔야 신청이 가능합니다.');
+								return false;
+							}
+						}
+					</script>
+				</div>
+			</div>
+			-->
+
+			<div class="business" style="background:#fff">
+				<h3>About <b>Us</b></h3>
+				
+				<p class="sub" style="text-align:center;line-height:2.0;margin:3% 0;max-width:1000px;margin:0 auto;">
+					(주)제이솔루션은 2018년 03월 기술벤처기업으로 설립하여 4차 산업혁명 시대의 ICT기술을 기반으로
+					기업, 공공기관, 교육기관, 협회 및 단체의 맞춤형
+					스마트화를 구축 및 지원하고 산업융합을 통한 기술가치 중심의 선도기업이 되기 위해 지속 기술개발과 고도화를 위해 노력하고 있습니다.
+				</p>
+				<div class="pricing">
+					<div class="row">
+						<div class="box1">
+							<div class="box" style="border:0.5em solid #47b2e4;" data-aos="fade-up">
+								<h3>ICT 솔루션</h3>
+								<ul>
+									<li><i class="fas fa-check"></i> M-CALL</li>
+									<li><i class="fas fa-check"></i> IAM</li>
+									<li><i class="fas fa-check"></i> IDM</li>
+									<li><i class="fas fa-check"></i> IAM+</li>
+									<li><i class="fas fa-check"></i> DTM</li>
+								</ul>
+							</div>
+						</div>
+						<div class="plus">
+							<i class="fas fa-plus"></i>
+						</div>
+						<div class="box1">
+							<div class="box" style="border:0.5em solid #47b2e4;" data-aos="fade-up">
+								<h3>하드웨어 솔루션</h3>
+								<ul>
+									<li><i class="fas fa-check"></i> ICT 장비</li>
+									<li><i class="fas fa-check"></i> 모니터링 장비</li>
+									<li><i class="fas fa-check"></i> 모바일 및 테블릿 IOT</li>
+									<li><i class="fas fa-check"></i> 기타 B2B 하드웨어 장비</li>
+								</ul>
+							</div>
+						</div>
+
+						<div class="plus equal">
+							<i class="fas fa-equals"></i>
+						</div>
+
+						<div class="box1" data-aos="fade-up">
+							<div class="box" style="background:#313c50;">
+								<h3 style="color:#fff">기업 전문 컨설팅</h3>
+								<ul>
+									<li style="color:#fff"><i class="fas fa-check"></i> 기업별 ICT 적용</li>
+									<li style="color:#fff"><i class="fas fa-check"></i> 기술, 경영, 품질 컨설팅</li>
+									<li style="color:#fff"><i class="fas fa-check"></i> 스마트화 솔루션</li>
+									<li style="color:#fff"><i class="fas fa-check"></i> 빅데이터, AI분석 지원</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- 기술력 -->
+			<DIV class="business"  style="background:#efefef;" data-aos="fade-up">
+				<h3>제이솔루션의 <b>기술력</b></h3>
+				<p class="sub" style="text-align:center">
+					제이솔루션은 클라우드, 비대면/무인화, AI&빅데이터 및 센싱 기술을 가지고 있습니다.
+				</p>
+				<div class="visual_mask">
+					<div class="visual_mask_bg">
+						<div class="slide"><img src="../image/mask_visual01.png" alt="mcall"></div>
+						<div class="slide"><img src="../image/mask_img02.png" alt="iam"></div>
+						<div class="slide"><img src="../image/mask_img03.png" alt="idm"></div>
+					</div>
+				</div>
+				<div class="menu">
+					<ul>
+						<li class="on">
+							<a href="javascript:;">M-CALL</a>
+							<div class="cont">
+								<p>
+									직영점의 미구축된 재고/물류관리 전산화 및 다자간<br>통합 모니터링 플랫폼입니다.
+								</p>
+								<a href="mcall.php" target="_self" class="btn_view"><span class="blind"> 바로가기</span>VIEW</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">IAM</a>
+							<div class="cont">
+								<p>
+									교육, 의료, 교회 등 클라우드 기반<br>출입 및 건강 관리 모니터링 플랫폼입니다.
+								</p>
+								<a href="iam.php" target="_self" class="btn_view"><span class="blind"> 바로가기</span>VIEW</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">오케스트라</a>
+							<div class="cont">
+								<p>
+									무인 키오스크 기반의 올인원 스마트 단말기<br>출납/재고 관리 모니터링 플랫폼 입니다.
+								</p>
+								<a href="waiting.php" target="_self" class="btn_view"><span class="blind"> 바로가기</span>VIEW</a>
+							</div>
+						</li>
+						<!--
+						<li>
+							<a href="javascript:;">IAM+</a>
+							<div class="cont">
+								<P>
+									병원 진료자 출입, 대기, 배정 등의 <br>현황 모니터링 통합 플랫폼입니다.
+								</P>
+								<a href="waiting.php" target="_self" class="btn_view"><span class="blind"> 바로가기</span>VIEW</a>
+							</div>
+						</li>
+						<li>
+							<a href="javascript:;">DTM</a>
+							<div class="cont">
+								<P>
+									국방분야 장병 출입, 건강체크, 물자배분, 훈련관리, 인사관리 등의<br>전분야를 통합한 모니터링 관리 플랫폼입니다.
+								</P>
+								<a href="dtm.php" target="_self" class="btn_view"><span class="blind"> 바로가기</span>VIEW</a>
+							</div>
+						</li>
+						-->
+					</ul>
+				</div>
+			</div>
+			<!-- 기술력e -->
+
+			<!-- 데이터바우처 -->
+			  <section id="hero" class="d-flex align-items-center" style="background:#fff;height:auto;">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+						<h1>제이솔루션</h1>
+						<h2>데이터바우처 선정기업</h2>
+						<div class="d-flex justify-content-center justify-content-lg-start">
+							<!-- <a href="#about" class="btn-get-started scrollto">서비스 문의</a> -->
+							<a href="https://www.youtube.com/watch?v=yBImjSy77Lo" class="glightbox btn-watch-video">
+							<i class="fas fa-play-circle" style="font-size:15px;"></i><span>데이터바우처 소개영상</span></a>
+						</div>
+					</div>
+					<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+						<img src="../image/hero-img.png" class="img-fluid animated" alt="">
+					</div>
+				</div>
+			</div>
+			</section>
+
+			
+			<!--
+			<div class="main_service" data-aos="fade-up">
+				<div>
+					<h3>제이솔루션의 <b>서비스</b></h3>
+					<ul>
+						<?php
+						$sql = "select * from max_banner where banner_code='index_bottom' order by banner_rank asc";
+						$result = max_query($sql);
+						while($row = max_assoc($result)) {
+						?>
+						<li>
+							<a href="<?php echo $row['banner_link']; ?>" style="background:url('<?php echo MAX_HOST_BANNER;?>/<?php echo $row['banner_image']; ?>') 100% 100% no-repeat;">
+								<h4><?php echo $row['banner_addfield_01']; ?></h4>
+								<p><?php echo nl2br($row['banner_addfield_02']); ?></p>
+							</a>
+						</li>
+						<?php
+						}
+						?>
+					</ul>
+				</div>
+			</div>
+			-->
+
+
+			<!-- 하단 회사소개 -->
+			<DIV class="our_company" data-aos="fade-up">
+				<DIV class="main_bottom_left">
+					<UL>
+						<LI>
+							<A href="about.php">
+								<SPAN class="years">2018~</SPAN>
+								<EM class="m_title">회사소개</EM>
+								<P class="txt">제이솔루션은 4차 산업혁명을 통해 비대면, 무인화, 지능화로 인한 전 산업분야의 디지털 트랜스포메이션을 위한 기업들의 지능형 모니터링 서비스를 지원합니다.</P>
+							</A>
+						</LI>
+						<LI>
+							<A href="tech.php">
+								<EM class="m_title">인증 및 기술현황</EM>
+								<P class="txt">제이솔루션의 인증서 및 기술현황을 확인해 보세요.</P>
+							</A>
+						</LI>
+						<LI>
+							<A href="hire.php">
+								<EM class="m_title">인재채용</EM>
+								<P class="txt">
+									제이솔루션은 미래를 함께할 인재를 기다리고 있습니다.
+								</P>
+							</A>
+						</LI>
+					</UL>
+				</DIV>
+				<DIV class="main_bottom_right">
+					<DIV class="news">
+						<P class="n_title1">공지사항<SPAN style="color:#b80000"></SPAN>제이솔루션에서 알려드립니다.</P>
+						<UL>
+							<?php
+							$sql = "select * from max_bbs_notice_n order by wtime desc limit 0,2";
+							$result = max_query($sql);
+							while($row = max_assoc($result)) {
+							?>
+							<li>
+								<a href="commu.php?bbs_code=notice_n&mode=view&uid=<?php echo $row['uid'] ?>">
+									<em class="n_title2"><?php echo $row['subject'] ?></em>
+									<span class="date"><?php echo date("Y.m.d", $row['wtime']); ?></span>
+								</a>
+							</li>
+							<?php
+							}
+							?>
+						</ul>
+					</DIV>
+					<DIV class="icon_menu">
+						<UL>
+							<LI>
+								<A href="about.php">
+									<div><i class="fas fa-building"></i></div>
+									<div><EM>회사소개</EM><P>모니터링<BR>제이솔루션</P></div>
+								</A>
+							</LI>
+							<LI>
+								<A href="tel:053-1644-3950">
+									<div><i class="fas fa-phone-volume"></i></div>
+									<div><EM>1644-3950</EM><P>평일 10:00~19:00 <BR>토,일 휴무 </P></div>
+								</A>
+							</LI>
+							<LI>
+								<A href="location.php">
+									<div><i class="fas fa-map-marked-alt"></i></div>
+									<div><EM>오시는 길</EM><P>본사의 위치를 <BR> 안내해 드립니다.</P></div>
+								</A>
+							</LI>
+						</UL>
+					</DIV>
+				</DIV>
+			</DIV>
+			<!-- //About Company -->
+			</div>
+			<!--
+			<div style="width:100%;background:#fff;">
+			<div class="main_net3">
+				<ul>
+					<li><a href="https://www.samsung.com/sec/" target="_blank"><img src="../image/samsung.png" alt="삼성전자"></a></li>
+					<li><a href="https://www.lge.co.kr/" target="_blank"><img src="../image/lg.png" alt="엘지전자"></a></li>
+					<li><a href="https://www.apple.com" target="_blank"><img src="../image/apple.png" alt="애플"></a></li>
+					<li><a href="https://www.kt.com/" target="_blank"><img src="../image/kt.png" alt="케이티"></a></li>
+					<li><a href="https://www.uplus.co.kr" target="_blank"><img src="../image/lguplus.png" alt="엘지유플러스"></a></li>
+				</ul>
+			</div>
+			</div>
+			-->
+		</div>
+	</div>
+</div>
+
+  <script src="../glightbox/js/glightbox.min.js"></script>
+
+<SCRIPT>
+
+/**
+* Template Name: Arsha - v4.2.0
+* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+(function() {
+  "use strict";
+
+  /**
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
+    } else {
+      return document.querySelector(el)
+    }
+  }
+
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all)
+    if (selectEl) {
+      if (all) {
+        selectEl.forEach(e => e.addEventListener(type, listener))
+      } else {
+        selectEl.addEventListener(type, listener)
+      }
+    }
+  }
+
+  /**
+   * Easy on scroll event listener 
+   */
+  const onscroll = (el, listener) => {
+    el.addEventListener('scroll', listener)
+  }
+
+  /**
+   * Navbar links active state on scroll
+   */
+  let navbarlinks = select('#navbar .scrollto', true)
+  const navbarlinksActive = () => {
+    let position = window.scrollY + 200
+    navbarlinks.forEach(navbarlink => {
+      if (!navbarlink.hash) return
+      let section = select(navbarlink.hash)
+      if (!section) return
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        navbarlink.classList.add('active')
+      } else {
+        navbarlink.classList.remove('active')
+      }
+    })
+  }
+  window.addEventListener('load', navbarlinksActive)
+  onscroll(document, navbarlinksActive)
+
+  /**
+   * Scrolls to an element with header offset
+   */
+  const scrollto = (el) => {
+    let header = select('#header')
+    let offset = header.offsetHeight
+
+    let elementPos = select(el).offsetTop
+    window.scrollTo({
+      top: elementPos - offset,
+      behavior: 'smooth'
+    })
+  }
+
+  /**
+   * Toggle .header-scrolled class to #header when page is scrolled
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add('header-scrolled')
+      } else {
+        selectHeader.classList.remove('header-scrolled')
+      }
+    }
+    window.addEventListener('load', headerScrolled)
+    onscroll(document, headerScrolled)
+  }
+
+  /**
+   * Back to top button
+   */
+  let backtotop = select('.back-to-top')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    onscroll(document, toggleBacktotop)
+  }
+
+  let collapse = select('.collapse')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    onscroll(document, toggleBacktotop)
+  }
+
+  /**
+   * Mobile nav toggle
+   */
+  on('click', '.mobile-nav-toggle', function(e) {
+    select('#navbar').classList.toggle('navbar-mobile')
+    this.classList.toggle('bi-list')
+    this.classList.toggle('bi-x')
+  })
+
+  /**
+   * Mobile nav dropdowns activate
+   */
+  on('click', '.navbar .dropdown > a', function(e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault()
+      this.nextElementSibling.classList.toggle('dropdown-active')
+    }
+  }, true)
+
+  /**
+   * Scrool with ofset on links with a class name .scrollto
+   */
+  on('click', '.scrollto', function(e) {
+    if (select(this.hash)) {
+      e.preventDefault()
+
+      let navbar = select('#navbar')
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile')
+        let navbarToggle = select('.mobile-nav-toggle')
+        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bi-x')
+      }
+      scrollto(this.hash)
+    }
+  }, true)
+
+  /**
+   * Scroll with ofset on page load with hash links in the url
+   */
+  window.addEventListener('load', () => {
+    if (window.location.hash) {
+      if (select(window.location.hash)) {
+        scrollto(window.location.hash)
+      }
+    }
+  });
+
+  /**
+   * Preloader
+   */
+  let preloader = select('#preloader');
+  if (preloader) {
+    window.addEventListener('load', () => {
+      preloader.remove()
+    });
+  }
+
+  /**
+   * Initiate  glightbox 
+   */
+  const glightbox = GLightbox({
+    selector: '.glightbox'
+  });
+
+  /**
+   * Skills animation
+   */
+  let skilsContent = select('.skills-content');
+  if (skilsContent) {
+    new Waypoint({
+      element: skilsContent,
+      offset: '80%',
+      handler: function(direction) {
+        let progress = select('.progress .progress-bar', true);
+        progress.forEach((el) => {
+          el.style.width = el.getAttribute('aria-valuenow') + '%'
+        });
+      }
+    })
+  }
+
+  /**
+   * Porfolio isotope and filter
+   */
+  window.addEventListener('load', () => {
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item'
+      });
+
+      let portfolioFilters = select('#portfolio-flters li', true);
+
+      on('click', '#portfolio-flters li', function(e) {
+        e.preventDefault();
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
+  });
+
+  /**
+   * Initiate portfolio lightbox 
+   */
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
+  });
+
+  /**
+   * Portfolio details slider
+   */
+  new Swiper('.portfolio-details-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  /**
+   * Animation on scroll
+   */
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
+    });
+  });
+
+})()
+
+</SCRIPT>

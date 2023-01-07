@@ -1,0 +1,61 @@
+<div class="section">
+	<?php include_once("inc/sub_ctgr_group2.php");?>
+	<div id="page_wrap">
+		<div class="sub_product_category">
+			<h3 class="stit"><?php echo get_title_only($_GET['cid']); ?></h3>
+			<ul>
+				<?php
+				$prd_arr = get_category_children($_GET['cid']);
+				foreach($prd_arr as $key => $v) {
+				?>
+				<li>
+					<a href="prod2_list.php?cid=<?php echo $v['cid']; ?>">
+						<h4><?php echo $v['category_name']; ?></h4>
+						<p><?php echo nl2br($v['category_addform_01']); ?></p>
+						<span>MORE</span>
+					</a>
+				</li>
+				<?php
+				}
+				?>
+				<!--
+				<li>
+					<a href="../prod2_list.php">
+						<h4>스마트 사이니지</h4>
+						<p>고객관리에서 매출증대까지<br>매장에 필요한 서비스</p>
+						<span>MORE</span>
+					</a>
+				</li>
+				 
+				<li>
+					<a href="javascript:;">
+						<h4>커브드 모니터</h4>
+						<p>초고속 인터넷을 다량으로 동시에!<br>기업형 광랜 서비스</p>
+						<span>MORE</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<h4>비디오 월</h4>
+						<p>사물관리, 학생, 운송 위치추적을<br>인터넷으로 관리하는 서비스</p>
+						<span>MORE</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<h4>모니터</h4>
+						<p>통신상품 다회선결합 할인 등<br>사업장에 필요한 서비스</p>
+						<span>MORE</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:;">
+						<h4>일반TV</h4>
+						<p>고객관리에서 매출증대까지<br>매장에 필요한 서비스</p>
+						<span>MORE</span>
+					</a>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+</div>

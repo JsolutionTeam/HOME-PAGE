@@ -1,0 +1,71 @@
+<div id="max_wrap">
+	<div id="header">
+		<div class="inner">
+			<h1 class="logo"><a href="/"><img src="../images/common/logo.png" alt="BIZWELL"></a></h1>
+			<div class="gnb_wrap">
+				<h2 class="blind">MAIN MENU</h2>
+				<ul class="gnb">
+					<li class="gnb-1dep">
+						<h3><a href="../about.php" class="on">회사소개</a></h3>
+						<ul class="gnb-2dep">
+							<li><a href="../about.php">회사개요</a></li>
+							<li><a href="../ceo.php">CEO 인사말</a></li>
+							<li><a href="../organization.php">조직도</a></li>
+							<li><a href="../history.php">연혁</a></li>
+							<li><a href="../field.php">사업분야</a></li>
+							<li><a href="../partner.php">파트너/고객사</a></li>
+							<li><a href="../location.php">오시는길</a></li>
+						</ul>
+					</li>
+					<li class="gnb-1dep">
+						<h3><a href="../prod1_list.php">통신상품</a></h3>
+						<ul class="gnb-2dep">
+							<li><a href="../prod1_list.php">기업전화</a></li>
+							<li><a href="javascript:;">인터넷</a></li>
+							<li><a href="">IOT</a></li>
+							<li><a href="">결합상품</a></li>
+							<li><a href="">소호상품</a></li>
+							<li><a href="">솔루션</a></li>
+						</ul>
+					</li>
+					<li class="gnb-1dep">
+						<h3><a href="../prod2_category.php">전자제품</a></h3>
+						<ul class="gnb-2dep">
+							<li><a href="../prod2_category.php">디스플레이/비즈TV</a></li>
+							<li><a href="javascript:;">PC/프린팅/IT</a></li>
+							<li><a href="javascript:;">주방가전</a></li>
+							<li><a href="javascript:;">생활가전/음향</a></li>
+						</ul>
+					</li>
+					<li class="gnb-1dep">
+						<h3><a href="../prod3_category.php">ICT 및 솔루션</a></h3>
+					</li>
+					<li class="gnb-1dep">
+						<h3><a href="../consulting.php">맞춤 컨설팅</a></h3>
+					</li>
+					<li class="gnb-1dep"><h3><a class="link" href="">임직원몰</a></h3></li>
+					<li class="gnb-1dep">
+						<h3><a href="../notice.php">고객지원</a></h3>
+						<ul class="gnb-2dep">
+							<li><a href="../notice.php">공지사항</a></li>
+							<li><a href="../customer.php">자주하는 질문</a></li>
+						</ul>
+					</li>
+				</ul>
+				<script>
+					$(function () { 
+						$(".gnb-1dep").mouseover( function () {
+							var idx = $(".gnb-1dep").index(this);
+							$(".gnb-1dep").eq(idx).children(".gnb-2dep").stop().slideDown(0);
+						});
+						$(".gnb-1dep").mouseleave( function () {
+							var idx = $(".gnb-1dep").index(this);
+							$(".gnb-1dep").children(".gnb-2dep").hide();
+						});
+					});
+				</script>
+			</div>
+		</div>
+	</div>
+	<div class="fullmenu_bg" style="display:none"></div>
+	<hr>

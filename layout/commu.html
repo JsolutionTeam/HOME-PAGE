@@ -1,0 +1,47 @@
+<?php
+$first_page = "help";
+$second_page = "notice";
+?>
+
+<div class="section">
+	<?php include_once("inc/sub_loc2.php");?>
+	<?php include_once("inc/sub_menu.php");?>
+	<div id="page_wrap">
+		<div id="customer">
+			
+				<?php
+				$max_outloader				= array();
+				$max_outloader['loader']	= true;
+				$max_outloader['path']	= './shop/';
+							
+				include_once("./shop/bbstest.php");
+				?>
+		</div>
+		<script>
+		//$("#tinymce").trigger("click");
+		//alert($("#tinymce").attr("class"));
+
+
+		</script>
+	</div>
+
+
+		<section id="pagewrap">
+			<h3 class="skip">콘텐츠</h3>
+			<article class="border_warp">
+				<script src="../shop/js/jquery-ui-1.9.2.min.js"></script>
+				<script src="../shop/js/jquery-ui-timepicker-addon.js"></script>
+				<script src="../shop/js/jquery.form.js"></script>
+				<script src="../shop/js/max.js"></script>
+				<script src="../shop/js/max_file_default.js"></script>
+				<script>
+					// JAVASCRIPT
+					var bbs_code = '<?=$bbs_code;?>';
+					var bbs_event_state = '<?=$bbs_event_state;?>';
+					var max_filename = 'commu';
+				</script>
+
+				
+			</article>
+		</section>
+</div>

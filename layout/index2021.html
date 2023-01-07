@@ -1,0 +1,327 @@
+	 <!--<style>
+		#popup {
+			height: 525px;
+			margin-left: -300px;
+			left: 50%;
+			margin-top: -260px;
+			top: 50%;
+			position: fixed;
+			z-index:999;
+			background-color:black;
+		}
+	</style>
+	<div id="popup">
+		<img src="./renewal_popup.jpg" alt="공사중" />
+		<div style="background-color:black; text-align:right; line-height:15px; height:20px; color:white;"><input id="no_today" type="checkbox" onclick="popup_today()" />오늘그만보기</label><label style="padding:10px;"><a href="javascript:;" onclick="$('#popup').hide();">닫기</a></label></div>
+	</div>
+	<script>
+		function setCookie(cname, cvalue, exdays) {
+			var d = new Date();
+			d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+			var expires="expires="+d.toUTCString();
+		    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+		}
+		function getCookie(cname) {
+			var name = cname + "=";
+			var ca = document.cookie.split(';');
+			for(var i = 0; i < ca.length; i++) {
+				var c = ca[i];
+				while(c.charAt(0) == ' '){
+					c = c.substring(1);
+				}
+				if(c.indexOf(name) == 0) {
+					return c.substring(name.length, c.length);
+				}
+		    }
+			return "";
+		}
+		function popup_today () {
+			if($("#no_today").prop("checked") == true) {
+				setCookie('pop_stop',1)
+			}
+		}
+		if(getCookie('pop_stop')) {
+			$("#popup").hide();
+		}
+	</script>-->
+	<div id="container">
+		<div class="main_visual">
+			<ul class="visual_img">
+				<?php
+				$timstamp = time();
+				$ntime = MAX_NOW_TIME;
+				$sql = "select * from max_banner where banner_code='index_visual' AND banner_use = 'Y' AND ( banner_date_use = '0' OR ( banner_date_use = '1' AND banner_sdate <='$ntime' AND banner_edate >= '$ntime' ) ) ORDER BY banner_rank ASC";
+				$result = max_query($sql);
+				while($row = max_assoc($result)) {
+				$n++;
+				?>
+				<li class="visual_item" style="<?php echo ($n==1)?"":"display:none; "?>background:url(<?php echo MAX_HOST_BANNER.DIRECTORY_SEPARATOR.$row['banner_image'] ?>) 50% no-repeat;">
+					<strong><?php echo $row['banner_addfield_01'] ?></strong>
+					<p><?php echo nl2br($row['banner_addfield_02']) ?></p>
+					<a class="btn-2" href="<?php echo $row['banner_link']; ?>" target="<?php echo $row['banner_link_type']; ?>">자세히보기</a>
+				</li>
+				<?php
+				}
+				?>
+			</ul>
+			<?php
+			if($n > 1) {
+			?>
+			<div class="visual_control">
+				<button type="button" onclick="visual_stop();" class="bt_vis_stop">일시정지</button>
+				<button type="button" onclick="visual_start();" class="bt_vis_play" style="display:none;">재생</button>
+				<?php
+				for($i=0; $i<$n; $i++) {
+				?>
+				<a href="javascript:;" class="bt_vis_btn <?php echo ($i == 0)?"on":""?>"><?php echo $i+1; ?></a>
+				<?php
+				}
+				?>
+				<!-- <a href="javascript:;">2</a>
+				<a href="javascript:;">3</a> -->
+			</div>
+			<div class="visual_btn">
+				<button type="button" id="bt_vis_prev" class="bt_vis_prev">Previous</button>
+				<button type="button" id="bt_vis_next" class="bt_vis_next">Next</button>
+			</div>
+			<?php
+			}
+			?>
+		</div>
+		<script>
+		<?php
+		if($n > 1) {
+		?>
+		var visual_default = 0;
+		var visual_cnt = $(".visual_item").length;
+		var visual_interval = 4000;
+		var visual_stoped = 0;
+		$(".bt_vis_btn").on("click", function () {
+			var idx = $(".bt_vis_btn").index(this);
+			if(visual_default != idx) {
+				$(".visual_item").fadeOut().eq(idx).fadeIn();
+				$(".bt_vis_btn").removeClass("on").eq(idx).addClass("on");
+			}
+			visual_default = idx;
+		});
+		$("#bt_vis_prev").on("click", function () {
+			if(visual_default == 0) {
+				visual_default = visual_cnt;
+			}
+			visual_default--;
+			$(".visual_item").fadeOut().eq(visual_default).fadeIn();
+			$(".bt_vis_btn").removeClass("on").eq(visual_default).addClass("on");
+			clear_start();
+		});
+		$("#bt_vis_next").on("click", function () {
+			visual_default++;
+			if(visual_default == visual_cnt) {
+				visual_default = 0;
+			}
+			$(".visual_item").fadeOut().eq(visual_default).fadeIn();
+			$(".bt_vis_btn").removeClass("on").eq(visual_default).addClass("on");
+			clear_start();
+
+		});
+		function visual_play() {
+			visual_default++;
+			if(visual_default == visual_cnt) {
+				visual_default = 0;
+			}
+			$(".visual_item").fadeOut().eq(visual_default).fadeIn();
+			$(".bt_vis_btn").removeClass("on").eq(visual_default).addClass("on");
+		}
+		function visual_stop() {
+			clearInterval(visual_int);
+			$(".bt_vis_stop").hide();
+			$(".bt_vis_play").show();
+			visual_stoped = 1;
+		}
+
+		function visual_start() {
+			visual_stoped = 0;
+			visual_int = setInterval(visual_play, visual_interval);
+			$(".bt_vis_stop").show();
+			$(".bt_vis_play").hide();
+		}
+
+		function clear_start() {
+			if(visual_stoped == 0) {
+			clearInterval(visual_int);
+			visual_int = setInterval(visual_play, visual_interval);
+			}
+		}
+
+		var visual_int = setInterval(visual_play, visual_interval);
+		<?php
+		}
+		?>
+		</script>
+		<div class="contents">
+			<div class="main_customer_wrap">
+				<div class="main_customer">
+					<div class="call_center">
+						<h3>상담전용 콜센터</h3>
+						<strong>1644-3950</strong>
+						<span>상담시간 10:00 AM ~ 6:00 PM</span>
+					</div>
+					<form method="post" onsubmit="return f_check();" action="estimate_result.php">
+						<div class="group_center">
+							<input type="hidden" name="mod" value="01_ho" />
+							<ul>
+								<li><input id="m_comm" type="radio" name="cid" value="통신상품" checked="checked"><label for="m_comm">통신상품(유선/무선상품)<span></span></label></li>
+								<li><input id="m_elec" type="radio" name="cid" value="전자제품"><label for="m_elec">전자제품<span></span></label></li>
+								<li><input id="m_solution" type="radio" name="cid" value="솔루션"><label for="m_solution">솔루션<span></span></label></li>
+								<li><input id="m_etcc" type="radio" name="cid" value="m_etc" style="display:none;"><label class="etc" for="m_etc">기타</label><input id="m_etc" type="text" name="etc" placeholder="작성해주세요"></li>
+							</ul>
+							<script>
+								$( "#m_etc" ).focus(function(){
+									$("input[name='chk_box']:checked").prop("checked", false);
+									$("#m_etcc").prop("checked", true);
+								});
+							</script>
+							<div class="agree_area">
+								<input id="m_agree" type="checkbox" name="agr_box" value="m_agree"><label for="m_agree"><span></span>고객정보수집 동의</label><a href="javascript:;" onclick="show_agreemnet();">전문보기</a>
+								<div class="info_collection_layer" style="display:none">
+									<h2>고객정보수집 동의</h2>
+									<p>제이솔루션(이하 '회사'라 한다)은 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.<br>회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.<br>(본 방침은부터 2018년 01월 01일부터 시행됩니다.)</p>
+									<textarea name="" rows="" cols=""><?php include_once("./inc/info_agree.php");?></textarea>
+									<button type="button" onclick="hide_agreement();">닫기</button>
+								</div>
+								<script>
+									var checked_chk = false;
+									$("#m_agree").on("click", function () {
+										if(checked_chk == false) {
+											alert('전문보기를 클릭해서 내용을 확인해주세요.');
+											$("#m_agree").prop("checked", false);
+										}
+									});
+									function show_agreemnet () {
+										$(".info_collection_layer").show();
+										$(".info_collection_bg").show();
+									}
+									function hide_agreement () {
+										$(".info_collection_layer").hide();
+										$(".info_collection_bg").hide();
+										checked_chk = true;
+									}
+								</script>
+								<div class="info_collection_bg" style="display:none"></div>
+							</div>
+						</div>
+						<div class="write_center">
+							<ul>
+								<li><label class="wr_la" for="wr_company">회사명</label><input id="wr_company" type="text" name="wr_company" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_name">담당자</label><input id="wr_name" type="text" name="wr_name" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_division">부서</label><input id="wr_division" type="text" name="wr_division" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_position">직책</label><input id="wr_position" type="text" name="wr_position" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_tel">연락처</label><input id="wr_tel" type="text" name="wr_tel" placeholder="숫자만 작성" required></li>
+								<li><label class="wr_la" for="wr_email">이메일</label><input id="wr_email" type="email" name="wr_email" value="" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_addr">주소</label><input id="wr_addr" type="text" name="wr_addr" placeholder="" required></li>
+								<li><label class="wr_la" for="wr_etc">기타</label><input id="wr_etc" type="text" name="wr_etc" value="" placeholder="생년월일, 이용 통신사, 휴대폰 기종" ></li>
+								<span class="tip">※ 모바일 신청시 기타란에 생년월일, 사용중인 통신사 및 휴대폰 기종 기재부탁드립니다.</span>
+							</ul>
+							<div class="bt_wrap">
+								<input class="bt_main_submit" type="submit" value="상담 신청">
+							</div>
+						</div>
+					</form>
+					<script>
+						function f_check() {
+							if($("#m_agree").prop("checked") == true) {
+								return true;
+							} else {
+								alert('고객정보수집을 동의해주셔야 신청이 가능합니다.');
+								return false;
+							}
+						}
+					</script>
+				</div>
+			</div>
+			<div class="main_service">
+				<h3>제이솔루션의 <b>주요 서비스</b></h3>
+				<ul>
+					<?php
+					$sql = "select * from max_banner where banner_code='index_bottom' order by banner_rank asc";
+					$result = max_query($sql);
+					while($row = max_assoc($result)) {
+					?>
+					<li>
+						<a href="<?php echo $row['banner_link']; ?>" style="background:url('<?php echo MAX_HOST_BANNER;?>/<?php echo $row['banner_image']; ?>') 100% 100% no-repeat;">
+							<h4><?php echo $row['banner_addfield_01']; ?></h4>
+							<p><?php echo nl2br($row['banner_addfield_02']); ?></p>
+						</a>
+					</li>
+					<?php
+					}
+					?>
+					<!-- <li>
+						<a href="prod1_list.php?cid=31">
+							<h4>인터넷</h4>
+							<p>초고속 인터넷을 다량으로 동시에!<br>기업형 광랜 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="prod1_list.php?cid=9">
+							<h4>IOT</h4>
+							<p>사물관리, 학생, 운송 위치추적을<br>인터넷으로 관리하는 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="prod1_list.php?cid=10">
+							<h4>결합상품</h4>
+							<p>통신상품 다회선결합 할인 등<br>사업장에 필요한 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="prod1_list.php?cid=11">
+							<h4>소호상품</h4>
+							<p>고객관리에서 매출증대까지<br>매장에 필요한 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="prod1_list.php?cid=12">
+							<h4>솔루션</h4>
+							<p>공간적 제약을 벗어난 빠른 협업을<br>만들어내는 기업솔루션</p>
+						</a>
+					</li> -->
+				</ul>
+			</div>
+			<div class="main_net">
+				<ul>
+					<li><img src="../images/main/f_link_01.gif" alt="삼성전자"></li>
+					<li><img src="../images/main/f_link_02.gif" alt="LG전자"></li>
+					<li><img src="../images/main/f_link_03.gif" alt="Apple"></li>
+					<li><img src="../images/main/f_link_04.gif" alt="KT"></li>
+					<li><img src="../images/main/f_link_05.gif" alt="SK텔레콤"></li>
+					<li><img src="../images/main/f_link_06.gif" alt="LG U플러스"></li>
+					<li><img src="../images/main/f_link_07.gif" alt="비즈웰"></li>
+				</ul>
+			</div>
+			<div class="main_center_wrap">
+				<div class="main_center">
+					<div class="notice">
+						<h4><a href="commu.php?bbs_code=notice_n&mode=list">새소식 & 공지사항</a></h4>
+						<ul><!-- max 2 list  -->
+							<?php
+							$sql = "select * from max_bbs_notice_n order by wtime desc limit 0,2";
+							$result = max_query($sql);
+							while($row = max_assoc($result)) {
+							?>
+							<li><a href="commu.php?bbs_code=notice_n&mode=view&uid=<?php echo $row['uid'] ?>"><span class="title"><?php echo $row['subject'] ?></span><span class="date"><?php echo date("Y.m.d", $row['wtime']); ?></span></a></li>
+							<?php
+							}
+							?>
+							<!-- <li><a href="javascript:;"><span class="title">제이솔루션 서비스 점검안내 [11월 29일(목) 9시 ~ 11월 30일(금) 14시]</span><span class="date">2018.11.25</span></a></li>
+							<li><a href="javascript:;"><span class="title">제이솔루션 홈페이지 오픈 안내</span><span class="date">2018.11.22</span></a></li> -->
+						</ul>
+					</div>
+					<div class="center">
+						<h4><a href="faq_m.php">제이솔루션 기업고객센터</a></h4>
+						<p><strong><?php echo $max_config['company_phone'] ?></strong><a href="consulting.php">맞춤 컨설팅 문의하기</a></p>
+						<span>오전 10:00 ~ 오후 06:00 평일 (토/일/공휴일 휴무)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

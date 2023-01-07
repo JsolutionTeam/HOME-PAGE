@@ -1,0 +1,208 @@
+<div class="section">
+	<?php include_once("inc/sub_loc.php");?>
+	<?php
+		$product_info = get_product_detail( "03_el", $_GET['pid'] );
+	?>
+	<div id="page_wrap">
+		<div id="max_detail">
+			<div class="max_pr_box">
+				<div class="max_img_area">
+					<div class="max_pr_img">
+						<p class="product_default_image">
+						<img id="img_default" src="<?php echo ($product_info['product_img_detail'])? MAX_HOST_PRODUCT.'/'.$product_info['product_img_detail']:'images/img_detail_thumb_big.png'; ?>" style="max-width:560px;" alt="이미지1">
+						</p>
+						<div class="max_pr_img_s">
+							<a href="javascript:;" id="max_bt_prev" class="max_bt_prev"><img src="images/common/arrow_detail_thumb_up.png" alt="이전" /></a>
+							<ul id="left_slide">
+								<li><a href="javascript:;" class="thumbimage on" alt=""><img src="<?php echo ($product_info['product_img_detail'])? MAX_HOST_PRODUCT.'/'.$product_info['product_img_detail']:'images/img_detail_thumb_big.png'; ?>" alt="이미지1"></a></li>
+						<?php if($product_info['product_img_add01']) { ?><li><a href="javascript:;" class="thumbimage" alt=""><img src="<?php echo ($product_info['product_img_add01'])? MAX_HOST_PRODUCT.'/'.$product_info['product_img_add01']:'images/img_detail_thumb_big.png'; ?>" alt="이미지1"></a></li><?php } ?>
+						<?php if($product_info['product_img_add02']) { ?><li><a href="javascript:;" class="thumbimage" alt=""><img src="<?php echo ($product_info['product_img_add02'])? MAX_HOST_PRODUCT.'/'.$product_info['product_img_add02']:'images/img_detail_thumb_big.png'; ?>" alt="이미지2"></a></li><?php } ?>
+						<?php if($product_info['product_img_add03']) { ?><li><a href="javascript:;" class="thumbimage" alt=""><img src="<?php echo ($product_info['product_img_add03'])? MAX_HOST_PRODUCT.'/'.$product_info['product_img_add03']:'images/img_detail_thumb_big.png'; ?>" alt="이미지3"></a></li><?php } ?>
+						<?php if($product_info['product_img_add04']) { ?><li><a href="javascript:;" class="thumbimage" alt=""><img src="<?php echo ($product_info['product_img_add04'])? MAX_HOST_PRODUCT.'/'.$product_info['product_img_add04']:'images/img_detail_thumb_big.png'; ?>" alt="이미지4"></a></li><?php } ?>
+						<?php if($product_info['product_img_add05']) { ?><li><a href="javascript:;" class="thumbimage" alt=""><img src="<?php echo ($product_info['product_img_add05'])? MAX_HOST_PRODUCT.'/'.$product_info['product_img_add05']:'images/img_detail_thumb_big.png'; ?>" alt="이미지5"></a></li><?php } ?>
+							</ul>
+							<a href="javascript:;" id="max_bt_next" class="max_bt_next"><img src="images/common/arrow_detail_thumb_down.jpg" alt="다음" /></a>
+						</div>
+						<script>
+						var left_slide_h, left_slide_cnt, left_slide_default=0, img_default=0;
+						function init_leftsilde () {
+							$("#left_slide > li").css({"position": "relative", "top": "0px"});
+							left_slide_h = $("#left_slide > li > a").eq(1).outerHeight(true);
+							left_slide_cnt = $("#left_slide > li").length;
+
+						} init_leftsilde ();
+
+						$("#max_bt_prev").on("click", function () {
+							if(left_slide_default == 0) return false;
+
+							if($(this).is(":animated")) return false;
+							$("#left_slide > li").each( function (x) {
+								$(this).animate({"top": "+="+left_slide_h});
+							});
+
+							left_slide_default--;
+							img_default--;
+							img_default_f (img_default);
+						});
+						$("#max_bt_next").on("click", function () {
+							if(left_slide_default >= Number(left_slide_cnt) - 3) return false;
+
+							if($(this).is(":animated")) return false;
+							$("#left_slide > li").each( function (x) {
+								$(this).animate({"top": "-="+left_slide_h});
+							});
+							left_slide_default++;
+
+							img_default++;
+							img_default_f (img_default);
+						});
+
+						$("#left_slide > li > a").on("click", function () {
+							img_default = $("#left_slide > li > a").index(this);
+							img_default_f(img_default);
+						});
+						function img_default_f (val) {
+							$("#left_slide > li > a").removeClass("on");
+							$("#left_slide > li > a").eq(val).addClass("on");
+							$("#img_default").attr("src", $("#left_slide > li > a").eq(val).find("img").attr("src")).attr("alt", $("#left_slide > li > a").eq(val).find("img").attr("alt"));
+
+						}
+						</script>
+					</div>
+				</div>
+				<div class="max_pr_info">
+					<div class="max_price_area">
+						<div class="max_price_tit">
+							<span><?php echo get_title_only($_GET['cid']); ?></span>
+							<h3><?php echo $product_info['product_name'] ?></h3>
+							<p><?php echo $product_info['product_summary'] ?></p>
+						</div>
+						<dl class="max_price_info">
+							<?php
+								$prd_opt = explode("†", $product_info['product_opt']);
+								foreach($prd_opt as $key => $v) {
+									$prd_opt_in = explode("‡", $v);
+							?>
+							<dt><?php echo $prd_opt_in[0]; ?></dt><dd><?php echo $prd_opt_in[1]; ?></dd>
+							<?php
+								}
+							?>
+							<!-- <dt>브랜드</dt><dd>삼성전자</dd>
+							<dt>원산지</dt><dd>대한민국</dd>
+							<dt>사이즈</dt><dd>138.7cm</dd>
+							<dt>해상도</dt><dd>1,920X1,080(16:9)</dd>
+							<dt>시중가격</dt><dd>1,099,000원</dd> -->
+							<!-- <dt>판매가격</dt><dd><span>견적문의</span></dd> -->
+						</dl>
+						<div class="max_price_box">
+							<div class="max_order_btns">
+								<input class="pr_bt_list" type="button" value="목록" onclick="location.href='prod2_list.php?cid=<?php echo $_GET['cid'] ?>'">
+								<input id="pr_bt_buy" class="pr_bt_buy" type="button" value="견적 문의">
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="max_pr_pop">
+					<div class="step_01">
+						<h3>견적문의</h3>
+						<h4>고객정보수집동의</h4>
+						<textarea><?php include_once "inc/info_agree.php"; ?></textarea>
+						<div class="agree_area">
+							<input id="m_agree" type="checkbox" name="agr_box" value="m_agree"><label for="m_agree"><span></span>고객정보수집에 동의합니다.</label>
+						</div>
+					</div>
+					<div class="step_02">
+						<h4>고객정보</h4>
+						<form method="post" onsubmit="return f_check();" action="estimate_result.php">
+							<input type="hidden" name="mod" value="03_el" />
+							<input type="hidden" name="pid" value="<?php echo $_GET['pid'];?>" />
+							<input type="hidden" name="cid" value="<?php echo $_GET['cid'];?>" />
+							<ul>
+								<li>
+									<label for="wr_company">회사명</label><input id="wr_company" type="text" name="wr_company" placeholder="" required>
+									<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+								</li>
+								<li>
+									<label for="wr_name">담당자</label><input id="wr_name" type="text" name="wr_name" placeholder="" required>
+									<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+								</li>
+								<li>
+									<label for="wr_division">부서</label><input id="wr_division" type="text" name="wr_division" placeholder="" required>
+									<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+								</li>
+								<li>
+									<label for="wr_position">직책</label><input id="wr_position" type="text" name="wr_position" placeholder="" required>
+									<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+								</li>
+								<li>
+									<label for="wr_tel">연락처</label><input id="wr_tel" type="text" name="wr_tel" placeholder="" required>
+									<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+								</li>
+								<li>
+									<label for="wr_email">이메일</label><input id="wr_email" type="email" name="wr_email" placeholder="" required>
+									<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+								</li>
+								<li>
+									<label for="wr_addr">주소</label><input id="wr_addr" type="text" name="wr_addr" placeholder="" required>
+									<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+								</li>
+								<li>
+									<label for="wr_etc">기타</label><input id="wr_etc" type="text" name="wr_etc" placeholder="" required>
+									<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+								</li>
+							</ul>
+							<div class="max_send_btns">
+								<input id="bt_cancle" class="bt_cancle" type="button" value="작성 취소">
+								<input class="bt_send on" type="submit" value="견적 요청"><!--.bt_send 모든 정보를 작성시, 클레스 on이 추가됩니다. 정보를 모두 기재하지 않을 시, 상단에 .error_next_box 에러문구가 뜹니다.-->
+							</div>
+						</form>
+						<script>
+						function f_check () {
+							if($("#m_agree").prop("checked") == false) {
+								alert("고객정보수집에 동의하셔야 합니다.");
+								return false;
+							}
+						}
+						</script>
+					</div>
+				</div>
+				<div class="max_pr_popbg"></div>
+				<script>
+				$("#pr_bt_buy").on("click",function () {
+					$(".max_pr_pop").show();
+					$(".max_pr_popbg").show();
+				});
+				$("#bt_cancle").on("click", function () {
+					$(".max_pr_pop").hide();
+					$(".max_pr_popbg").hide();
+				});
+				</script>
+			</div>
+
+			<div class="max_detail_view">
+				<?php
+				if($product_info['product_detail']) {
+				echo width_height_delete($product_info['product_detail']);
+				} else {
+				?>
+				<img src="../images/img_detail_size.png">
+				<?php
+				}
+				?>
+			</div>
+
+			<?php if ( $max_member['member_id'] === 'admin' ) { ?>
+				<div class="max_detail_view" style="margin-bottom: 50px;">
+					<a href="http://www.j-sol.co.kr/shop/admin_new/product_prd_write_03_el.php?mode=modify&pid=<?php echo $product_info['pid']; ?>" target="_blank">
+						<button class="btn_b_type02">수정</button>
+					</a>
+					<a href="http://www.j-sol.co.kr/shop/admin_new/product_prdlist_03_el.php?mode=search&search_product_name=<?php echo $product_info['product_name']; ?>" target="_blank">
+						<button class="btn_b_type02">삭제</button>
+					</a>
+				</div>
+			<?php } ?>
+
+		</div>
+	</div>
+</div>

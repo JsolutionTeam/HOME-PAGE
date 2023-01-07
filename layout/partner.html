@@ -1,0 +1,134 @@
+<?php
+$first_page = "company";
+$second_page = "partner";
+?>
+
+<div class="section">
+	<?php include_once("inc/sub_loc2.php");?>
+	<?php include_once("inc/sub_menu.php");?>
+	<div id="page_wrap">
+		<div id="partner">
+			<h3 class="stit"><b>파트너/고객사</b></h3>
+			<h4>Partner</h4>
+			<ul class="partner_wrap">
+				<li>
+					<span></span>
+					<dl>
+						<dt>SKTelecom</dt>
+						<dd><a href="http://www.sktelecom.com" target="_blank">www.sktelecom.com</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>KT</dt>
+						<dd><a href="http://www.kt.com" target="_blank">www.kt.com</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>LG U+</dt>
+						<dd><a href="http://www.uplus.co.kr" target="_blank">www.uplus.co.kr</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>APPLE</dt>
+						<dd><a href="http://www.apple.com" target="_blank">www.apple.com</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>삼성전자</dt>
+						<dd><a href="http://www.samsung.com" target="_blank">www.samsung.com</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>LG전자</dt>
+						<dd><a href="http://www.lge.co.kr" target="_blank">www.lge.co.kr</a></dd>
+					</dl>
+				</li>
+			</ul>
+
+			<h4>Client</h4>
+			<ul class="client_wrap">
+				<?php
+				$sql = "select * from max_banner where banner_use='Y' and banner_code = 'index_partner' order by banner_rank desc, bid asc";
+				$result = max_query($sql);
+				while($row = max_assoc($result)) {
+				?>
+				<li>
+					<span style="background:url(<?php echo MAX_HOST_DATA ?>/banner/<?php echo $row['banner_image'] ?>) 50% no-repeat;"></span>
+					<dl>
+						<dt><?php echo $row['banner_name'] ?></dt>
+						<dd><a href="http://<?php echo $row['banner_link'] ?>" target="_blank"><?php echo $row['banner_link'] ?></a></dd>
+					</dl>
+				</li>
+				<?php
+				}
+				?>
+				<!-- <li>
+					<span></span>
+					<dl>
+						<dt>경북대학교병원(본원/칠곡)</dt>
+						<dd><a href="http://www.knuh.kr" target="_blank">www.knuh.kr</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>경북도청</dt>
+						<dd><a href="http://www.gyeongbuk.go.kr" target="_blank">www.gyeongbuk.go.kr</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>경북대학교</dt>
+						<dd><a href="http://www.knu.ac.kr" target="_blank">www.knu.ac.kr</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>대구은행</dt>
+						<dd><a href="http://www.dgb.co.kr" target="_blank">www.dgb.co.kr</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>신용보증기금</dt>
+						<dd><a href="http://www.kodit.co.kr" target="_blank">www.kodit.co.kr</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>안동성소병원</dt>
+						<dd><a href="http://www.sungso.com" target="_blank">www.sungso.com</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>중앙교육연수원</dt>
+						<dd><a href="http://www.neti.go.kr" target="_blank">www.neti.go.kr</a></dd>
+					</dl>
+				</li>
+				<li>
+					<span></span>
+					<dl>
+						<dt>한국산업기술평가관리원</dt>
+						<dd><a href="http://www.keit.re.kr" target="_blank">www.keit.re.kr</a></dd>
+					</dl>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+</div>

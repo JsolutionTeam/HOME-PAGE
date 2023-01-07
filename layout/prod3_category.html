@@ -1,0 +1,45 @@
+<div class="section">
+	<?php include_once("inc/sub_loc.php");?>
+	<div id="page_wrap">
+		<div class="sub_product_category">
+			<h3 class="stit"><b>ICT 솔루션</b></h3>
+			<ul>
+				<?php
+				$prd_arr = get_category_product("04_ic", $_GET['cid']);
+				foreach($prd_arr as $key => $v) {
+				?>					
+				<li>
+					<a href="prod3_detail.php?cid=<?php echo $_GET['cid']?>&pid=<?php echo $v['pid'] ?>">
+						<h4><?php echo $v['product_name'] ?></h4>
+						<p><?php echo nl2br($v['product_summary']) ?></p>
+						<span>MORE</span>
+					</a>
+				</li>
+				<?php
+				}
+				?>
+				<!-- <li>
+					<a href="../prod3_detail.php">
+						<h4>솔루션1</h4>
+						<p>고객관리에서 매출증대까지<br>매장에 필요한 서비스</p>
+						<span>MORE</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<h4>솔루션2</h4>
+						<p>초고속 인터넷을 다량으로 동시에!<br>기업형 광랜 서비스</p>
+						<span>MORE</span>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<h4>솔루션3</h4>
+						<p>사물관리, 학생, 운송 위치추적을<br>인터넷으로 관리하는 서비스</p>
+						<span>MORE</span>
+					</a>
+				</li> -->
+			</ul>
+		</div>
+	</div>
+</div>
