@@ -1,0 +1,342 @@
+/* 프랜차이즈 지점소개 부분 css */
+
+
+/* 전체틀 */
+@media(max-width:9999px) {
+.port_wrap {width:100%;float:left;}
+}
+
+@media(max-width:1056px) {
+.brand > .map {width:100%;float:left;display:none;}
+.brand > .map-detail{width:100%;float:left;}
+.brand > .map-detail > div > ul > li {width:24%;margin:0.5%;}
+.brand > .map-detail > p.text{text-align:left;}
+}
+
+/* 리스트 스타일 */
+@media(max-width:9999px) {
+
+.shop_list {margin:3% 0;float:left;width:100%;}
+.shop_list > span{font-family:NanumGothic;color:#f00;float:left;}
+
+.shop_list > span+span{font-family:NanumGothic;color:#f00;float:right;color:#d90000;font-size:18px;font-weight:700;}
+
+table.box2{width:100%;border-top:4px solid #ce3030;margin-top:1%;float:left;font-size:15px;}
+table.box2 > thead > tr > th {padding:1.5%;border-bottom:2px solid #ce3030;text-align:center;}
+table.box2 > tfoot > tr > td {padding:1%;vertical-align:middle;text-align:right;}
+table.box2 > tbody > tr > td {padding:0.5%;text-align:center;border-bottom:1px solid #aaa;vertical-align:middle;letter-spacing:-1px;}
+table.box2 > tbody > tr > td > img {width:100%;}
+table.box2 > tbody > tr > td > span > a {display:block;background:#ce3030;padding:5% 0;color:#fff;border-radius:5%;}
+table.box2 > tbody > tr > td > span > a:hover {background:#ff6000;}
+}
+
+@media(max-width:768px) {
+table.box2 > thead > tr > th {font-size:13px;letter-spacing:-1px;}
+table.box2 > tbody > tr > td {font-size:13px;letter-spacing:-1px;padding:3% 0;}
+table.box2 > tbody > tr > td > span > a {font-size:13px;}
+table.box2 .hide {display:none;}
+}
+
+/* 지도 */
+
+h1 {
+	margin-bottom: 20px;
+	border-bottom: 2px solid #000;
+	font: bold 28px Arial, Helvetica, sans-serif;
+	text-align: center;
+	padding-bottom: 5px;
+}
+
+h1 a {
+	color: #000;
+	text-decoration: none;
+}
+
+@media(max-width:9999px) {
+
+ul#continents1, ul#continents2, ul#continents3 {
+	list-style: none;
+	width: 500px;
+	height: 550px;
+	position: relative;
+	background: url(/skin_mw1/images/map.png) no-repeat 0 0;
+	z-index:199;
+	padding:5% 0;
+
+}
+
+ul#continents1 li, ul#continents2 li, ul#continents3 li {
+	position: absolute;
+}
+
+/* 서울 */
+.seoul {
+	width: 34px;
+	height: 28px;
+	top: 93px;
+	left: 211px;
+	position:absolute;
+	z-index: 199;
+}
+ul#continents2 li.seoul a:hover, ul#continents3 li.seoul a:hover {
+	background-position: -65px -635px;
+}
+
+
+/* 인천 */
+.incheon {
+	width: 66px;
+	height: 79px;
+	top: 72px;
+	left: 145px;
+	position:absolute;
+	z-index: 9900;
+}
+ul#continents2 li.incheon a:hover, ul#continents3 li.incheon a:hover {
+	background-position: -180px -669px;
+}
+
+
+/* 경기 */
+.gyeonggi {
+	width: 114px;
+	height: 150px;
+	top: 29px;
+	left: 189px;
+	position:absolute;
+	z-index: 9900;
+}
+ul#continents2 li.gyeonggi a:hover, ul#continents3 li.gyeonggi a:hover {
+	background-position: -40px -689px;
+}
+
+/* 강원 */
+.kangwon {
+	width: 188px;
+	height: 176px;
+	top: 1px;
+	left: 246px;
+	position:absolute;
+	z-index: 9900;
+}
+ul#continents2 li.kangwon a:hover, ul#continents3 li.kangwon a:hover {
+	background-position: -270px -611px;
+}
+
+
+/* 경북 */
+.gyeongbuk {
+	width: 189px;
+	height: 201px;
+	top: 132px;
+	left: 292px;
+	position:absolute;
+	z-index: 9900;
+}
+ul#continents2 li.gyeongbuk a:hover, ul#continents3 li.gyeongbuk a:hover {
+	background-position: -264px -919px;
+}
+
+/* 대구 */
+.daegu {
+	width: 37px;
+	height: 40px;
+	top: 286px;
+	left: 335px;
+	position:absolute;
+	z-index: 9990;
+}
+ul#continents2 li.daegu a:hover, ul#continents3 li.daegu a:hover {
+	background-position: -401px -846px;
+}
+
+/* 경남 */
+.gyeongnam {
+	width: 146px;
+	height: 142px;
+	top: 293px;
+	left: 263px;
+	position:absolute;
+	z-index: 9900;
+}
+ul#continents2 li.gyeongnam a:hover, ul#continents3 li.gyeongnam a:hover {
+	background-position: -63px -1020px;
+}
+
+
+/* 부산 */
+.busan {
+	width: 46px;
+	height: 40px;
+	top: 356px;
+	left: 371px;
+	position:absolute;
+	z-index: 9990;
+}
+ul#continents2 li.busan a:hover, ul#continents3 li.busan a:hover {
+	background-position: -131px -590px;
+}
+
+/* 울산 */
+.ulsan {
+	width: 43px;
+	height: 44px;
+	top: 320px;
+	left: 390px;
+	position:absolute;
+	z-index: 9990;
+}
+ul#continents2 li.ulsan a:hover, ul#continents3 li.ulsan a:hover {
+	background-position: -326px -862px;
+}
+
+
+
+/* 충북 */
+.chungbuk {
+	width: 123px;
+	height: 132px;
+	top: 146px;
+	left: 247px;
+	position:absolute;
+	z-index: 9900;
+}
+ul#continents2 li.chungbuk a:hover, ul#continents3 li.chungbuk a:hover {
+	background-position: -189px -796px;
+}
+
+
+/* 충남 */
+.chungnam {
+	width: 129px;
+	height: 124px;
+	top: 158px;
+	left: 146.5px;
+	position:absolute;
+	z-index: 9900;
+}
+ul#continents2 li.chungnam a:hover, ul#continents3 li.chungnam a:hover {
+	background-position: -44px -866px;
+}
+
+/* 대전 */
+.daejeon {
+	width: 25px;
+	height: 31px;
+	top: 225px;
+	left: 242px;
+	position:absolute;
+	z-index: 9900;
+}
+ul#continents2 li.daejeon a:hover, ul#continents3 li.daejeon a:hover {
+	background-position: -209px -590px;
+}
+
+/* 전북 */
+.jeonbuk {
+	width: 138px;
+	height: 95px;
+	top: 259px;
+	left: 162px;
+	position:absolute;
+	z-index: 9900;
+}
+
+ul#continents2 li.jeonbuk a:hover, ul#continents3 li.jeonbuk a:hover {
+	background-position: -302px -1162px;
+}
+
+
+/* 광주 */
+.gwangju {
+	width: 33px;
+	height: 20px;
+	top: 355px;
+	left: 177px;
+	position:absolute;
+	z-index: 10000;
+}
+ul#continents2 li.gwangju a:hover, ul#continents3 li.gwangju a:hover {
+	background-position: -107px -1210px;
+}
+
+
+/* 전남 */
+.jeonnam {
+	width: 177px;
+	height: 150px;
+	top: 325px;
+	left: 106px;
+	position:absolute;
+	z-index: 8000;
+}
+ul#continents2 li.jeonnam a:hover, ul#continents3 li.jeonnam a:hover {
+	background-position: -112px -1236px;
+}
+
+
+/* 제주 */
+.jeju {
+	width: 72px;
+	height: 35px;
+	top: 513px;
+	left: 120px;
+	position:absolute;
+	z-index: 8000;
+}
+ul#continents2 li.jeju a:hover, ul#continents3 li.jeju a:hover {
+	background-position: -381px -1314px;
+}
+
+
+
+ul#continents1 li a, ul#continents2 li a, ul#continents3 li a  {
+	display: block;
+	outline: none;
+	height: 100%;
+}
+
+ul#continents1 li a, ul#continents2 li a  {
+	text-indent: -9000px;
+}
+
+ul#continents2 li a:hover, ul#continents3 li a:hover {
+	background: url(/skin_mw1/images/map.png) no-repeat 0 0;	
+}
+
+
+
+
+
+ul#continents3 li a span {
+	display: none;
+}
+
+ul#continents3 li a:hover span {
+	display: block;
+}
+
+
+
+ul#continents3 li a:hover span {
+	display: block;
+	padding: 5px;
+	width: 150px;
+	background: #000;
+	position: relative;
+	top: 50%;
+	font: 11px Arial, Helvetica, sans-serif;
+	opacity: .75;
+	filter:alpha(opacity=75);
+	color: #FFF;
+}
+
+ul#continents3 li a:hover span strong {
+	display: block;
+	padding:1% 1.5%;
+	font-size: 16px;
+	text-decoration: underline;
+	text-align:center;
+	opacity:1;
+}
+

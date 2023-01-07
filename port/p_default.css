@@ -1,0 +1,85 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url( https://fonts.googleapis.com/css?family=Rubik:300,400,700 );
+/* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css); */
+/* @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css); */
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900'); */
+
+* {-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+:after, :before {-webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box;}
+
+@font-face {
+	font-family: Rubik;
+	src: url(https://fonts.gstatic.com/s/rubik/v12/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-WYiFV0Uz.woff) format("woff");
+	font-weight: 300;
+	font-style: normal;
+}
+@font-face {
+	font-family: Rubik;
+	src: url(https://fonts.gstatic.com/s/rubik/v12/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-B4iFV0Uz.woff) format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Rubik;
+	src: url(https://fonts.gstatic.com/s/rubik/v12/iJWZBXyIfDnIV5PNhY1KTN7Z-Yh-4I-FV0Uz.woff) format("woff");
+	font-weight: 700;
+	font-style: normal;
+}
+
+
+/* reset */
+html {/* overflow-y: scroll; */ height: 100%;}
+body {height:100%;}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,figure,figcaption,address{margin:0;padding:0}
+body,input,textarea,select,button,table{font-family:'Noto Sans KR','µ¸¿ò',Dotum,helvetica,sans-serif;font-size:12px;line-height:1.7em;color:#666;}
+img{border:0}
+ul,ol{list-style:none}
+fieldset{border:none}
+fieldset legend {position:absolute;visibility:hidden;overflow:hidden;width:0;height:0;margin:0;padding:0;font:0/0 Arial;}
+button{cursor:pointer}
+header,hgroup,article,nav,footer,figure,figcaption,canvas,section,time{display:block}
+hr {clear:both;display:none;}
+li img, dd img {vertical-align:top;}
+*html body img {margin:none; padding:none;} /*for IE 6*/
+button{border:none;}
+a{
+	color:#666;
+	text-decoration:none;
+	-webkit-transition: all 0.2s ease-in-out;
+	   -moz-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		 -o-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+}
+a:hover,
+a:active,
+.tt:hover{
+	text-decoration:underline;
+	-webkit-transition: all 0.2s ease-in-out;
+	   -moz-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		 -o-transition: all 0.2s ease-in-out;
+			transition: all 0.2s ease-in-out;
+}
+
+table caption {visibility:hidden; overflow:hidden; width:0; height:0; margin:0; padding:0; font:0/0 Arial;}
+input[type="radio"], input[type="checkbox"] {vertical-align:middle !important; margin:-2px 3px 0 0 !important;}
+input,select {vertical-align:middle; background:#fff;}
+
+
+/* user class */
+h1,h2,h3,h4,h5,h6,strong,th,.bold,dt{font-weight:700;}
+.clear{clear:both;}
+.clearfix {*zoom:1;}
+.clearfix:after {content:" "; display:block; clear:both;}
+.hide {position:absolute;visibility:hidden;overflow:hidden;width:0;height:0;margin:0;padding:0;font:0/0 Arial;}
+.pointer {cursor:pointer;}
+.input {height:20px; font-size:13px; line-height:20px; border-top:1px solid #c6c6c6; border-left:1px solid #c6c6c6; border-right:1px solid #eee; border-bottom:1px solid #eee; box-shadow:inset 0px 1px 1px #eee; border-radius:3px;}
+.textarea {padding:5px; font-size:13px; line-height:24px; border-top:1px solid #c6c6c6; border-left:1px solid #c6c6c6; border-right:1px solid #eee; border-bottom:1px solid #eee; resize:none; overflow:auto; border-radius:3px;}
+.select {height:26px; padding:0 0 0 5px; font-size:13px; border-top:1px solid #c6c6c6; border-left:1px solid #c6c6c6; border-right:1px solid #eee; border-bottom:1px solid #eee; box-shadow:inset 0px 1px 1px #eee; border-radius:3px;}
+.bgbg {background:#fff;}
+
+.tac {text-align:center;}

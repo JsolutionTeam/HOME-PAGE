@@ -1,0 +1,156 @@
+<?php include_once("../inc/doctype.php");?>
+<div id="max_wrap">
+	<?php include_once("../inc/header.php");?>
+	<hr>
+	<style>
+		#popup {
+			height: 525px;
+			margin-left: -300px;
+			left: 50%;
+			margin-top: -260px;
+			top: 50%;
+			position: fixed;
+			z-index:999;
+			background-color:black;
+		}
+	</style>
+	<div id="popup">
+		<img src="./renewal_popup.jpg" alt="공사중" />
+		<div style="background-color:black; text-align:right; line-height:15px; height:20px; color:white;"><label style="padding:10px;"><a href="javascript:;" onclick="$('#popup').hide();">닫기</a></label></div>
+	</div>
+	<div id="container">
+		<div class="main_visual">
+			<ul class="visual_img">
+				<li>
+					<strong>SUCCESS PARTNER</strong>
+					<p>안정적인 네트워크 운영센터와 기업맞춤 컨설팅 서비스, 신속한 A/S와 통신비용 절감의 최강 솔루션</p>
+					<a class="btn-2" >자세히보기</a>
+				</li>
+				<li style="display:none">
+					<strong>SUCCESS PARTNER</strong>
+					<p>안정적인 네트워크 운영센터와 기업맞춤 컨설팅 서비스, 신속한 A/S와 통신비용 절감의 최강 솔루션</p>
+					<a class="btn-2" >자세히보기</a>
+				</li>
+				<li style="display:none">
+					<strong>SUCCESS PARTNER</strong>
+					<p>안정적인 네트워크 운영센터와 기업맞춤 컨설팅 서비스, 신속한 A/S와 통신비용 절감의 최강 솔루션</p>
+					<a class="btn-2" >자세히보기</a>
+				</li>
+			</ul>
+			<div class="visual_control">
+				<button type="button" class="bt_vis_stop">일시정지</button>
+				<!-- <button type="button" class="bt_vis_play">재생</button> -->
+				<a href="javascript:;" class="on">1</a>
+				<a href="javascript:;">2</a>
+				<a href="javascript:;">3</a>
+			</div>
+			<div class="visual_btn">
+				<button type="button" class="bt_vis_prev">Previous</button>
+				<button type="button" class="bt_vis_next">Next</button>
+			</div>
+		</div>
+		<div class="contents">
+			<div class="main_customer_wrap">
+				<div class="main_customer">
+					<div class="call_center">
+						<h3>상담전용 콜센터</h3>
+						<strong>1644-3950</strong>
+						<span>상담시간 9:00 AM ~ 6:00 PM</span>
+					</div>
+					<div class="group_center">
+						<form method="post" action="">
+							<ul>
+								<li><input id="m_comm" type="radio" name="chk_box" value="m_comm"><label for="m_comm">통신상품(유선/무선상품)<span></span></label></li>
+								<li><input id="m_elec" type="radio" name="chk_box" value="m_elec"><label for="m_elec">전자제품<span></span></label></li>
+								<li><input id="m_solution" type="radio" name="chk_box" value="m_solution"><label for="m_solution">솔루션<span></span></label></li>
+								<li><label class="etc" for="m_etc">기타</label><input id="m_etc" type="text" name="" placeholder="작성해주세요"></li>
+							</ul>
+						</form>
+					</div>
+					<div class="write_center">
+						<form method="post" action="">
+							<ul>
+								<li><label for="name1">회사명</label><input id="name1" type="text" name="" placeholder="제이솔루션"></li>
+								<li><label for="name2">담당자</label><input id="name2" type="text" name="" placeholder="성함"></li>
+								<li><label for="tel">연락처</label><input id="tel" type="text" name="" placeholder="1644-3650"></li>
+								<li><label for="emall">이메일</label><input id="emall" type="emall" name="" value="@naver.com"></li>
+							</ul>
+							<div class="agree_area">
+								<input id="m_agree" type="checkbox" name="agr_box" value="m_agree"><label for="m_agree"><span></span>고객정보수집 동의</label><a href="javascript:;">전문보기</a>
+								<div class="info_collection_layer" style="display:none">
+									<h2>고객정보수집 동의</h2>
+									<p>제이솔루션(이하 '회사'라 한다)은 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.<br>회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.<br>(본 방침은부터 2018년 01월 01일부터 시행됩니다.)</p>
+									<textarea name="" rows="" cols=""><?php include_once("../inc/info_agree.php");?></textarea>
+									<button type="button">닫기</button>
+								</div>
+								<div class="info_collection_bg" style="display:none"></div>
+								<input class="bt_main_submit" type="submit" value="상담 신청">
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="main_service">
+				<h3>제이솔루션의 <b>주요 서비스</b></h3>
+				<ul>
+					<li>
+						<a href="javascript:;">
+							<h4>기업전화</h4>
+							<p>고객관리에서 매출증대까지<br>매장에 필요한 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h4>인터넷</h4>
+							<p>초고속 인터넷을 다량으로 동시에!<br>기업형 광랜 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h4>IOT</h4>
+							<p>사물관리, 학생, 운송 위치추적을<br>인터넷으로 관리하는 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h4>결합상품</h4>
+							<p>통신상품 다회선결합 할인 등<br>사업장에 필요한 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h4>소호상품</h4>
+							<p>고객관리에서 매출증대까지<br>매장에 필요한 서비스</p>
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<h4>솔루션</h4>
+							<p>공간적 제약을 벗어난 빠른 협업을<br>만들어내는 기업솔루션</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="main_center_wrap">
+				<div class="main_center">
+					<div class="notice">
+						<h4><a href="/notice.php">새소식 & 공지사항</a></h4>
+						<ul><!-- max 2 list  -->
+							<li><a href="javascript:;"><span class="title">제이솔루션 서비스 점검안내 [11월 29일(목) 9시 ~ 11월 30일(금) 14시]</span><span class="date">2018.11.25</span></a></li>
+							<li><a href="javascript:;"><span class="title">제이솔루션 홈페이지 오픈 안내</span><span class="date">2018.11.22</span></a></li>
+						</ul>
+					</div> 
+					<div class="center">
+						<h4><a href="/customer.php">제이솔루션 기업고객센터</a></h4>
+						<p><strong>1644-3650</strong><a href="../consulting.php">맞춤 컨설팅 문의하기</a></p>
+						<span>오전 09:00 ~ 오후 06:00 평일 (토/일/공휴일 휴무)</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php include_once("../inc/footer.php");?>
+</div>
+</body>
+</html>
+

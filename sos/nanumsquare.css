@@ -1,0 +1,9 @@
+
+@font-face{
+font-family:'NanumSquareR';
+src: url(../fonts/nanumgquare/NanumSquareR.eot);
+src: url(../fonts/nanumgquare/NanumSquareR.eot?#iefix) format('embedded-opentype'),
+     url(../fonts/nanumgquare/NanumSquareR.woff) format('woff'),
+     url(../fonts/nanumgquare/NanumSquareR.ttf) format('truetype');
+}
+
