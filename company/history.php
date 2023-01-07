@@ -1,5 +1,4 @@
 <?php
-	include "../shop/common.php";
 	include "../head2021.php";
 ?>
 
@@ -35,7 +34,7 @@ $get_mode	= $_GET['mode'];
 	}
 ?>
 
-<?php	include "../layout/".MAX_FILENAME.".html"; ?>
+<?php	include "../layout/history.html"; ?>
 
 <?php
 	include "../tail.php";

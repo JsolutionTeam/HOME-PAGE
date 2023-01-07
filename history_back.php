@@ -1,10 +1,8 @@
 <?php
 
-	include "./head.php";
-?>
+	include "./head2021.php";
+	
+	include "./layout/history_back.html";
 
-<?php	include "./layout/".MAX_FILENAME.".html"; ?>
-
-<?php
 	include "./tail.php";
 ?>

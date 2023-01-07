@@ -357,7 +357,7 @@ WHERE 조건절(예 : name=“임꺽정”)
 	</tr>
 	<tr>
 		<td>취급자</td>
-		<td>박태준, 이성복</td>
+		<td>박태준</td>
 	</tr>
 </table>
 

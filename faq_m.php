@@ -54,7 +54,7 @@ $max_skin = skin_loads();
 	$title = '자주하는 질문';
 ?>
 	
-<?php	include "./layout/".MAX_FILENAME.".html"; ?>
+<?php	include "./layout/faq_m.html"; ?>
 
 <?php
 	include "./tail.php";

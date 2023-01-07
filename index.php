@@ -1,9 +1,8 @@
 <?php
+
 	include "./head2021.php";
-?>
+	
+	include "./layout/index.html";
 
-<?php	include "./layout/".MAX_FILENAME.".html"; ?>
-
-<?php
 	include "./tail.php";
 ?>

@@ -1,49 +1,8 @@
-
-
 <link href="../glightbox/css/glightbox.min.css" rel="stylesheet">
 <link href="../swiper/swiper-bundle.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../sos/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="../sos/slick/slick-theme.css"/>
 <div class="section">
-	<!--
-	<div id="container">
-		<DIV class="content main" id="contentWrapMain">
-			<DIV class="visual_copy">
-				<DIV class="slogan"><IMG src="../image/main_txt.png"></DIV>
-				<A class="btn_view" href="/about.php" target="_self">VIEW</A>
-			</DIV>
-			<DIV class="visual">
-				<DIV class="slide">
-					<IMG alt="" src="../image/mcall.jpg">
-				</DIV>
-				<DIV class="slide">
-					<IMG alt="" src="../image/iam.jpg">
-				</DIV>
-				<DIV class="slide">
-					<IMG alt="" src="../image/oke.jpg">
-				</DIV>
-
-				<!-- 슬라이더 S
-				<DIV class="slide">
-					<IMG alt="" src="../image/v1.jpg" data-type="1" data-url="/mcall.php">
-				</DIV>
-				<DIV class="slide">
-					<IMG alt="" src="../image/v2.jpg" data-type="2" data-url="/iam.php">
-				</DIV>
-				<DIV class="slide">
-					<IMG alt="" src="../image/v3.jpg" data-type="3" data-url="/history.php">
-				</DIV>
-				<DIV class="slide">
-					<IMG alt="" src="../image/v4.jpg" data-type="4" data-url="/waiting.php">
-				</DIV>
-				<DIV class="slide">
-					<IMG alt="" src="../image/v5.jpg" data-type="5" data-url="/dtm.php">
-				</DIV>
-			</DIV>
-		</div>
-	</div>
-	-->
-
 
 <div class="slider_wrap" style="width:100%;float:left;background:#fff;">
 	<div id="slider-div">
@@ -101,90 +60,6 @@ $(function(){
 })
 </script>
 		<div class="contents main">
-			<!--
-			<div class="main_customer_wrap">
-				<div class="main_customer">
-					<div class="call_center">
-						<h3>상담전용 콜센터</h3>
-						<strong>1644-3950</strong>
-						<span>상담시간 10:00 AM ~ 6:00 PM</span>
-					</div>
-					<form method="post" onsubmit="return f_check();" action="estimate_result.php">
-						<div class="group_center">
-							<input type="hidden" name="mod" value="01_ho" />
-							<ul>
-								<li><input id="m_solution" type="radio" name="cid" value="ICT솔루션"><label for="m_solution">ICT솔루션<span></span></label></li>
-								<li><input id="m_comm" type="radio" name="cid" value="통신상품" checked="checked"><label for="m_comm">통신상품(유선/무선상품)<span></span></label></li>
-								<li><input id="m_elec" type="radio" name="cid" value="전자제품"><label for="m_elec">전자제품<span></span></label></li>
-								<li><input id="m_etcc" type="radio" name="cid" value="m_etc" style="display:none;"><label class="etc" for="m_etc">기타</label><input id="m_etc" type="text" name="etc" placeholder="작성해주세요"></li>
-							</ul>
-							<script>
-								$( "#m_etc" ).focus(function(){
-									$("input[name='chk_box']:checked").prop("checked", false);
-									$("#m_etcc").prop("checked", true);
-								});
-							</script>
-							<div class="agree_area">
-								<input id="m_agree" type="checkbox" name="agr_box" value="m_agree"><label for="m_agree"><span></span>고객정보수집 동의</label>
-								<a href="javascript:;" onclick="show_agreemnet();">전문보기</a>
-								<div class="info_collection_layer" style="display:none">
-									<h2>고객정보수집 동의</h2>
-									<p>제이솔루션(이하 '회사'라 한다)은 개인정보보호법에 따라 이용자의 개인정보 보호 및 권익을 보호하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록 다음과 같은 처리방침을 두고 있습니다.<br>회사는 개인정보처리방침을 개정하는 경우 웹사이트 공지사항(또는 개별공지)을 통하여 공지할 것입니다.<br>(본 방침은부터 2018년 01월 01일부터 시행됩니다.)</p>
-									<textarea name="" rows="" cols=""><?php include_once("./inc/info_agree.php");?></textarea>
-									<button type="button" onclick="hide_agreement();">닫기</button>
-								</div>
-								<script>
-									var checked_chk = false;
-									$("#m_agree").on("click", function () {
-										if(checked_chk == false) {
-											alert('전문보기를 클릭해서 내용을 확인해주세요.');
-											$("#m_agree").prop("checked", false);
-										}
-									});
-									function show_agreemnet () {
-										$(".info_collection_layer").show();
-										$(".info_collection_bg").show();
-									}
-									function hide_agreement () {
-										$(".info_collection_layer").hide();
-										$(".info_collection_bg").hide();
-										checked_chk = true;
-									}
-								</script>
-								<div class="info_collection_bg" style="display:none"></div>
-							</div>
-						</div>
-						<div class="write_center">
-							<ul>
-								<li><label class="wr_la" for="wr_company">회사명</label><input id="wr_company" type="text" name="wr_company" placeholder="" required></li>
-								<li><label class="wr_la" for="wr_name">담당자</label><input id="wr_name" type="text" name="wr_name" placeholder="" required></li>
-								<li><label class="wr_la" for="wr_division">부서</label><input id="wr_division" type="text" name="wr_division" placeholder="" required></li>
-								<li><label class="wr_la" for="wr_position">직책</label><input id="wr_position" type="text" name="wr_position" placeholder="" required></li>
-								<li><label class="wr_la" for="wr_tel">연락처</label><input id="wr_tel" type="text" name="wr_tel" placeholder="숫자만 작성" required></li>
-								<li><label class="wr_la" for="wr_email">이메일</label><input id="wr_email" type="email" name="wr_email" value="" placeholder="" required></li>
-								<li><label class="wr_la" for="wr_addr">주소</label><input id="wr_addr" type="text" name="wr_addr" placeholder="" required></li>
-								<li><label class="wr_la" for="wr_etc">기타</label><input id="wr_etc" type="text" name="wr_etc" value="" placeholder="생년월일, 이용 통신사, 휴대폰 기종" ></li>
-								<span class="tip">※ 모바일 신청시 기타란에 생년월일, 사용중인 통신사 및 휴대폰 기종 기재부탁드립니다.</span>
-							</ul>
-							<div class="bt_wrap">
-								<input class="bt_main_submit" type="submit" value="상담 신청">
-							</div>
-						</div>
-					</form>
-					<script>
-						function f_check() {
-							if($("#m_agree").prop("checked") == true) {
-								return true;
-							} else {
-								alert('고객정보수집을 동의해주셔야 신청이 가능합니다.');
-								return false;
-							}
-						}
-					</script>
-				</div>
-			</div>
-			-->
-
 			<div class="business" style="background:#fff">
 				<h3>About <b>Us</b></h3>
 				

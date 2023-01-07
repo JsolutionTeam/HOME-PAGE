@@ -2,7 +2,7 @@
 
 	include "./head2021.php";
 	
-	include "./layout/".MAX_FILENAME.".html";
+	include "./layout/commu.html";
 
 	include "./tail.php";
 ?>

@@ -3,7 +3,7 @@
 	include "./head.php";
 ?>
 	
-<?php	include "./layout/".MAX_FILENAME.".html"; ?>
+<?php	include "./layout/about_back.html"; ?>
 
 <?php
 	include "./tail.php";

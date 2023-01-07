@@ -35,7 +35,7 @@ $get_mode	= $_GET['mode'];
 	}
 ?>
 
-<?php	include "./layout/".MAX_FILENAME.".html"; ?>
+<?php	include "./layout/history.html"; ?>
 
 <?php
 	include "./tail.php";
