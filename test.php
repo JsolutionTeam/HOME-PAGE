@@ -9,7 +9,7 @@ if( $_SERVER['REMOTE_ADDR'] != '115.90.106.188' &&  $_SERVER['REMOTE_ADDR'] != '
 ?> -->
 
 <?php
-	include "./shop/common.php";
+
 	include "./head.php";
 ?>
 <?php	include "./layout/".MAX_FILENAME.".html"; ?>

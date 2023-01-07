@@ -1,5 +1,5 @@
 <?php
-	include "./shop/common.php";
+
 	include "./head2021.php";
 
 $max_skin = skin_loads();

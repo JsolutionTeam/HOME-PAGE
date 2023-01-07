@@ -1,5 +1,5 @@
 <?php
-	include "./shop/common.php";
+
 	include "./head.php";
 ?>
 
