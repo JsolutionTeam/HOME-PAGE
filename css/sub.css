@@ -182,12 +182,15 @@
 .field_item .txt_box_lst:hover * {color:#FFF;}
 
 .field_step {width:1366px;margin:0 auto;padding-bottom:60px; text-align:center;}
-.field_step .top_p {padding:1.2em 1em; margin-bottom:60px; line-height:150%; background:#eee; font-weight:lighter; font-size:24px; position:relative; color:#000;}
-.field_step .top_p::after {content:''; border:20px solid transparent; border-top-color:#eee; position:absolute; left:50%; bottom:-40px; margin-left:-20px;}
-.field_step .top_p span {position:relative;}
+.field_step .top_p {padding:1.2em 1em; margin-bottom:60px; line-height:150%; background:#4cbde5; font-weight:lighter; font-size:24px; position:relative; color:#fff;font-weight:bold;border-radius:0.5em;}
+.field_step .top_p::after {content:''; border:20px solid transparent; border-top-color:#4cbde5; position:absolute; left:50%; bottom:-40px; margin-left:-20px;}
+.field_step .top_p span {position:relative;font-size:35px;}
+.field_step > div {width:35%;position:relative;float:left;padding:3%;}
+.field_step > div > img {width:100%;}
+.field_step > div:nth-child(3) {width:60%;}
 .field_step ul {width:100%; overflow:hidden;}
 .field_step ul li {float:left; width:24%;}
-.field_step ul > li:nth-child(n+2) {margin-left:1.333333333333333%;}
+.field_step ul > li:nth-child(n+2) {margin-left:1.33%;}
 .field_step ul li span {display:block; height:70px; line-height:70px; border-radius:20px 20px 0 0; background:#2548a7; font-weight:lighter; font-size:24px; color:#fff;}
 .field_step ul li ol {width:100%; overflow:hidden; padding:20px 0; border:1px solid #dedede; border-top:0; border-radius:0 0 20px 20px; margin-bottom:30px; box-sizing:border-box;}
 .field_step ul li ol li {display:block; width:100%; margin:6px 0; font-size:16px; color:#666; font-weight:bold; font-size:15px;}
@@ -212,6 +215,7 @@
 	.field_item {width:100%;}
 	.field_item .tit {float:left; width:100%; height:220px; margin-right:40px;}
 	.field_step ul li {float:left; width:97%;margin:3% 1.5%;}
+	.field_step{float:left; width:97%;margin:3% 1.5%;}
 	.field_step .top_p {font-size:16px;word-break:keep-all;}
 	.field_item .txt_box_lst {float:left; width:96%;margin:0 2% 15% 2%;padding:10%;height:auto;}
 	.field_item .txt_box_lst:nth-of-type(n+2) {margin-bottom:15%;}
@@ -222,7 +226,9 @@
 	.field_item .txt_box_lst::before {content:''; position:absolute; top:-50px; right:20px; display:block; width:100px; height:100px;}
 .field_step ul li p {background:#fff; color:#f92593; font-size:15px; height:60px; line-height:60px; border-radius:30px; border:1px solid #f5c5de; box-sizing:border-box;}
 .field_step ul li span {display:block; height:70px; line-height:70px; border-radius:20px 20px 0 0; background:#2548a7; font-weight:lighter; font-size:13px; color:#fff;}
-
+.field_step > div {width:100%;position:relative;float:left;padding:3%;}
+.field_step > div:nth-child(2) > img {width:70%;}
+.field_step > div:nth-child(3) {width:100%;}
 }
 
 
@@ -274,7 +280,8 @@
 }
 
 
-#location {width:1366px;padding:0 30px; margin:80px auto;overflow:hidden;}
+/* #location {width:1366px;padding:0 30px; margin:80px auto;overflow:hidden;} */
+#location {width:100%;max-width:1366px;padding:0 00px; margin:0px auto;overflow:hidden;}
 .place_wrap {width:1366px; margin:0 auto 80px;}
 .place_lst {width:100%; height:410px; padding-bottom:40px; margin-top:40px; position:relative;}
 .map {position:relative;width:40%; height:380px; margin-left:40px; background:#eee;float:left;}
@@ -293,7 +300,7 @@
 .place_box dl dd em {color:#0073EE;}
 
 @media all and (max-width:1366px){
-	#location {width:100%;padding:0 30px; margin:80px auto;}
+	#location {width:100%;padding:0 0px; margin:80px auto;}
 
 	.place_wrap {width:100%; margin:0;overflow:hidden;}
 	.map {position:relative;width:90%;float:left;overflow:hidden;margin:0 5%;}

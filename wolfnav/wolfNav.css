@@ -116,8 +116,6 @@ transition:2000ms cubic-bezier(0.02, 0.51, 0.29, 0.99); float: left; opacity: 0;
 
 @media all and (max-width:1100px){
 	.l-navbar {display:none;}
-
-	.logo {width:100%;}
 	.nav3 {width:100%;border-top:1px solid #ddd;}
 	.wrap {width:100%;margin:0;}
 	.sub_page_wrap {width:100%;float:left;}
