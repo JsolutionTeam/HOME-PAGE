@@ -5,6 +5,7 @@
 		elseif ($first_page=="ict") {echo "<p><span>기업상황을 체계적으로 분석하여 최적의 솔루션을 제공합니다.</span>ICT 솔루션</p>";}
 		elseif ($first_page=="field") {echo "<p ><span>제이솔루션은 B2B 전문 컨설팅 회사로<br>기업의 사업환경에 적합한 상품을 제공합니다.</span>맞춤컨설팅</p>";}
 		elseif ($first_page=="help") {echo "<p style='color:#222'><span>B2B 전문 상품 컨설팅 회사 제이솔루션</span>기업의 사업환경에 최적의 솔루션을 제안해드립니다.</p>";}
+		elseif ($first_page=="shop") {echo "<p style='color:#222'><span>B2B 전문 상품 컨설팅 회사 제이솔루션</span>기업의 사업환경에 최적의 솔루션을 제안해드립니다.</p>";}
 	?>
 	</div>
 

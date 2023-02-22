@@ -121,9 +121,6 @@ $(document).ready(function(){
 						</li>
 						<li>
 							<a href="../faq_m.php">고객지원</a>
-							<ul>
-								<li><a href="../faq_m.php">FAQ</a></li>
-							</ul>
 						</li>
 					</ul>
 				</div>
@@ -171,13 +168,17 @@ $(document).ready(function(){
 							<li><a href="../huclo_projection.php">HUCLO PROJECTION</a></li>
 						</ul>
 					</li>
-
+						<!--
 						<li>
 							<a href="../faq_m.php">고객지원</a>
 							<ul>
 								<li><a href="../faq_m.php">FAQ</a></li>
 							</ul>
 						</li>
+						-->
+					<li><a href="../shop.php">쇼핑몰</a></li>
+						</ul>
+					</li>
 				</ul>
 			</NAV>
 		</div>
@@ -226,12 +227,7 @@ $(document).ready(function(){
 								<li><a href="../huclo_projection.php">HUCLO PROJECTION</a></li>
 							</ul>
 						</li>
-						<li>
-							<a href="../faq_m.php">고객지원</a>
-							<ul>
-								<li><a href="../faq_m.php">FAQ</a></li>
-							</ul>
-						</li>
+						<li><a href="../shop.php">쇼핑몰</a></li>
 					</ul>
 				</div>
 			</div>
@@ -278,12 +274,7 @@ $(document).ready(function(){
 							</ul>
 						</li>
 						
-						<li>
-							<a href="../faq_m.php">고객지원</a>
-							<ul>
-								<li><a href="../faq_m.php">FAQ</a></li>
-							</ul>
-						</li>
+						<li><a href="../shop.php">쇼핑몰</a></li>
 				</ul>
 			</NAV>
 		</div>

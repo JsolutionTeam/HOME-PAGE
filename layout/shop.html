@@ -1,3 +1,22 @@
+<style>
+.shop_box {width:18%;height:300px;float:left;margin:2% 0;}
+.shop_pic {width:100%;float:left;height:230px;border:1px solid #ddd;text-align:center;background:#fff;}
+.shop_pic img {width:100%;height:100%;}
+.shop_txt {width:100%;min-height:70px;float:left;}
+.shop_txt > p {margin:2% 0;}
+.shop_tit {text-align:center;font-size:16px;}
+.shop_price {text-align:center;font-weight:bold;color:#f72f2f;}
+.shop_btn {background:#d90000;color:#fff;font-weight:bold;text-align:center;border-radius:1.5rem;margin:0 30%;padding:1% 0;}
+.shop_btn:hover {background:#25cbbd;}
+.margin2 {margin:2% 0;}
+</style>
+
+<?php
+$first_page = "shop";
+$second_page = "shop";
+?>
+
+
 <div class="section">
 	<?php include_once("inc/sub_loc2.php");?>
 	<?php include_once("inc/sub_menu.php");?>
@@ -5,10 +24,267 @@
 <BODY>
 
 </HEADER>
-<div id="location" >
+<div style="width:100%;background:#fafafa;">
+<div id="location" style="padding:2% 0;">
 	<h3 class="stit"><b>쇼핑몰</b></span></h3>
-	<DIV id="wrapper"></div>
+	<DIV id="wrapper">
+	<!--
+		<ul class="shop_list">
+			<li>
+				<div class="shop_box">
+					<div class="shop_pic"><img src="image/s23.png"><div>
+					<div class="shop_txt">
+						<p class="shop_tit">삼성 S23</p>
+						<p class="shop_price">2,000,0000원</p>
+					</div>
+				</div>
+			</li>
+			
+			<li>
+				<div class="shop_box">
+					<div class="shop_pic"><img src="image/s23.png"><div>
+					<div class="shop_txt">
+						<p class="shop_tit">삼성 S23</p>
+						<p class="shop_price">2,000,0000원</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	-->
 	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s23_.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">삼성 S23</p>
+					<p class="shop_price">1,155,000원</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s23+.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S23+</p>
+					<p class="shop_price">1,353,000원</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s23u.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S23 Ultra</p>
+					<p class="shop_price">1,599,400원</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s23_.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S23 512GB</p>
+					<p class="shop_price">1,276,000원</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s23+.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S23+ 512GB</p>
+					<p class="shop_price">1,474,000원</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s23u.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S23 Ultra 512GB</p>
+					<p class="shop_price">1,720,400원</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s22_.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S22</p>
+					<p class="shop_price">999,900</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s22+.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S22+</p>
+					<p class="shop_price">1,199,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s22u.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S22 Ultra</p>
+					<p class="shop_price">1,452,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s22u.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 S22 Ultra 512GB</p>
+					<p class="shop_price">1,551,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/flip4.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 Z Flip4</p>
+					<p class="shop_price">1,353,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/fold4.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 Z Fold4</p>
+					<p class="shop_price">1,998,700</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/fold4.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 Z Fold4 512GB</p>
+					<p class="shop_price">2,119,700</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/flip3.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 Z Flip3</p>
+					<p class="shop_price">1,155,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/fold3.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 Z Fold3</p>
+					<p class="shop_price">1,899,700</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/fold3.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 Z Fold3 512GB</p>
+					<p class="shop_price">1,998,700</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/a33.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 A33 5G</p>
+					<p class="shop_price">499,400</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/jump2.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">갤럭시 Jump2</p>
+					<p class="shop_price">399,300</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphone14.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone 14 128G</p>
+					<p class="shop_price"> 1,243,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphone14+.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone 14 Plus 128G</p>
+					<p class="shop_price"> 1,342,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphone14pro.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone 14 Pro 128G</p>
+					<p class="shop_price"> 1,540,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphone14promax.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone 14 Pro Max 128G</p>
+					<p class="shop_price"> 1,749,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphonese3.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone SE 3세대 128G</p>
+					<p class="shop_price"> 495,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphone13mini.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone 13 mini 128G</p>
+					<p class="shop_price"> 726,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphone13.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone 13 128G</p>
+					<p class="shop_price"> 748,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphone13pro.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone 13 Pro 128G</p>
+					<p class="shop_price"> 1,012,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/iphone13promax.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit">iPhone 13 Pro Max 128G</p>
+					<p class="shop_price">1,144,000</p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			<!--
+			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+				<div class="shop_pic"><img src="image/s23.png"></div>
+				<div class="shop_txt">
+					<p class="shop_tit"></p>
+					<p class="shop_price"></p>
+					<a href="#"><p class="shop_btn">신청하기<p></a>
+				</div>
+			</div>
+			-->
+
 		</div>
 	</div>
 </div>
+
+</div>
+
+<div 

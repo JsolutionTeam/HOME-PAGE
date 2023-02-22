@@ -9,6 +9,7 @@
 						elseif ($first_page=="tech") {echo "기술 및 인증";}
 						elseif ($first_page=="ict") {echo "ICT 솔루션";}
 						elseif ($first_page=="help") {echo "고객지원";}
+						elseif ($first_page=="shop") {echo "쇼핑몰";}
 					?>
 				</p>
 				<ul class="menu1_lst">
@@ -16,7 +17,7 @@
 					<li><a href="../field.php">사업분야</a></li>
 					<li><a href="../tech.php">기술 및 인증</a></li>
 					<li><a href="../mcall.php">ICT솔루션</a></li>
-					<li><a href="../faq_m.php">고객지원</a></li>
+					<li><a href="../shop.php">쇼핑몰</a></li>
 				</ul>
 			</div>
 			<div class="loc_depth loc_depth2">
@@ -37,6 +38,7 @@
 						elseif ($second_page=="huclo_product") {echo "HUCLO PRODUCT";}
 						elseif ($second_page=="huclo_projection") {echo "HUCLO PROJECTION";}
 						elseif ($second_page=="faq") {echo "자주하는 질문";}
+						elseif ($second_page=="shop") {echo "쇼핑몰";}
 					?>
 				</p>
 				<ul class="menu2_lst">
