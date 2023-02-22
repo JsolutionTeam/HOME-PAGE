@@ -43,7 +43,9 @@
 					<li class="gnb-1dep">
 						<h3><a href="../consulting.php">맞춤 컨설팅</a></h3>
 					</li>
-					<li class="gnb-1dep"><h3><a class="link" href="">임직원몰</a></h3></li>
+					<li class="gnb-1dep">
+						<h3><a class="link" href="">임직원몰</a></h3>
+					</li>
 					<li class="gnb-1dep">
 						<h3><a href="../notice.php">고객지원</a></h3>
 						<ul class="gnb-2dep">
@@ -53,12 +55,12 @@
 					</li>
 				</ul>
 				<script>
-					$(function () { 
-						$(".gnb-1dep").mouseover( function () {
+					$(function () {
+						$(".gnb-1dep").mouseover(function () {
 							var idx = $(".gnb-1dep").index(this);
 							$(".gnb-1dep").eq(idx).children(".gnb-2dep").stop().slideDown(0);
 						});
-						$(".gnb-1dep").mouseleave( function () {
+						$(".gnb-1dep").mouseleave(function () {
 							var idx = $(".gnb-1dep").index(this);
 							$(".gnb-1dep").children(".gnb-2dep").hide();
 						});

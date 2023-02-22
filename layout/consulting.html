@@ -17,35 +17,40 @@ $second_page = "consulting";
 					<h4>고객정보</h4>
 					<ul class="cst_info_box">
 						<li>
-							<label for="buyer_company">기업명</label><input id="buyer_company" type="text" name="buyer_company"  />
+							<label for="buyer_company">기업명</label><input id="buyer_company" type="text"
+								name="buyer_company" />
 							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
 						</li>
 						<li>
-							<label for="buyer_company_number">사업자등록번호</label><input id="buyer_company_number" type="text" name="buyer_company_number"  />
+							<label for="buyer_company_number">사업자등록번호</label><input id="buyer_company_number"
+								type="text" name="buyer_company_number" />
 							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
 						</li>
 						<li>
-							<label for="wr_division">부서</label><input id="wr_division" type="text" name="wr_division"  />
+							<label for="wr_division">부서</label><input id="wr_division" type="text" name="wr_division" />
 							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
 						</li>
 						<li>
-							<label for="wr_position">직책</label><input id="wr_position" type="text" name="wr_position"  />
+							<label for="wr_position">직책</label><input id="wr_position" type="text" name="wr_position" />
 							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
 						</li>
 						<li>
-							<label for="buyer_name">담당자명</label><input id="buyer_name" type="text" name="buyer_name"  />
+							<label for="buyer_name">담당자명</label><input id="buyer_name" type="text" name="buyer_name" />
 							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
 						</li>
 						<li>
-							<label for="buyer_sphone">연락처</label><input id="buyer_sphone" type="text" name="buyer_sphone" />
+							<label for="buyer_sphone">연락처</label><input id="buyer_sphone" type="text"
+								name="buyer_sphone" />
 							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
 						</li>
 						<li>
-							<label for="buyer_addr">사업장 주소</label><input id="buyer_addr" type="text" name="buyer_addr"  />
+							<label for="buyer_addr">사업장 주소</label><input id="buyer_addr" type="text"
+								name="buyer_addr" />
 							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
 						</li>
 						<li>
-							<label for="buyer_email">이메일</label><input id="buyer_email" type="text" name="buyer_email"  />
+							<label for="buyer_email">이메일</label><input id="buyer_email" type="text"
+								name="buyer_email" />
 							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
 						</li>
 					</ul>
@@ -57,7 +62,9 @@ $second_page = "consulting";
 						$arr = get_05_ct_cat(82);
 						foreach($arr as $key => $v) {
 						?>
-						<li><label><input type="checkbox" name="opt1[]" value="<?php echo $v['category_name'] ?>"><?php echo $v['category_name'] ?></label></li>
+						<li><label><input type="checkbox" name="opt1[]" value="<?php echo $v['category_name'] ?>">
+								<?php echo $v['category_name'] ?>
+							</label></li>
 						<?php
 						}
 						?>
@@ -98,7 +105,10 @@ $second_page = "consulting";
 									foreach($arr[category_name] as $key => $v) {
 										$parent = get_parent_dd($arr['cid'][$key]);
 									?>
-									<option value="<?php echo $v ?>" data-cid="<?php echo $arr['cid'][$key] ?>" data-pid="<?php echo $parent['cid'] ?>"><?php echo $v ?></option>
+									<option value="<?php echo $v ?>" data-cid="<?php echo $arr['cid'][$key] ?>"
+										data-pid="<?php echo $parent['cid'] ?>">
+										<?php echo $v ?>
+									</option>
 									<?php
 									}
 									?>
@@ -110,7 +120,11 @@ $second_page = "consulting";
 									foreach($arr[category_name] as $key => $v) {
 										$parent = get_parent_dd($arr['cid'][$key]);
 									?>
-									<option class="opt3_bopt" value="<?php echo $v ?>" data-cid="<?php echo $arr['cid'][$key] ?>" data-pid="<?php echo $parent['cid'] ?>"><?php echo $v ?></option>
+									<option class="opt3_bopt" value="<?php echo $v ?>"
+										data-cid="<?php echo $arr['cid'][$key] ?>"
+										data-pid="<?php echo $parent['cid'] ?>">
+										<?php echo $v ?>
+									</option>
 									<?php
 									}
 									?>
@@ -122,39 +136,43 @@ $second_page = "consulting";
 									foreach($arr[category_name] as $key => $v) {
 										$parent = get_parent_dd($arr['cid'][$key]);
 									?>
-									<option class="opt3_copt" value="<?php echo $v ?>" data-cid="<?php echo $arr['cid'][$key] ?>" data-pid="<?php echo $parent['cid'] ?>"><?php echo $v ?></option>
+									<option class="opt3_copt" value="<?php echo $v ?>"
+										data-cid="<?php echo $arr['cid'][$key] ?>"
+										data-pid="<?php echo $parent['cid'] ?>">
+										<?php echo $v ?>
+									</option>
 									<?php
 									}
 									?>
 								</select>
 								<script>
-								var opt3_b_con = $("select[name=opt3_b]").html();
-								var opt3_c_con = $("select[name=opt3_c]").html();
+									var opt3_b_con = $("select[name=opt3_b]").html();
+									var opt3_c_con = $("select[name=opt3_c]").html();
 
-								$(".opt3_bopt").remove();
-								$(".opt3_copt").remove();
-								$("select[name=opt3_a]").on("change", function () {
-									$("select[name=opt3_b] > option").remove();
 									$(".opt3_bopt").remove();
-									$("select[name=opt3_b]").append(opt3_b_con);
-									var cid = $("select[name=opt3_a] > option:selected").data("cid");
-									//$("select[name=opt3_c]").append(opt3_c_con);
+									$(".opt3_copt").remove();
+									$("select[name=opt3_a]").on("change", function () {
+										$("select[name=opt3_b] > option").remove();
+										$(".opt3_bopt").remove();
+										$("select[name=opt3_b]").append(opt3_b_con);
+										var cid = $("select[name=opt3_a] > option:selected").data("cid");
+										//$("select[name=opt3_c]").append(opt3_c_con);
 
-									$(".opt3_bopt").each( function (x) {
-										if($(this).data("pid") != cid) { $(this).remove();}
+										$(".opt3_bopt").each(function (x) {
+											if ($(this).data("pid") != cid) { $(this).remove(); }
+										});
+										$("select[name=opt3_b] > option").eq(0).prop("selected", true);
+										$("select[name=opt3_c] > option").eq(0).prop("selected", true);
 									});
-									$("select[name=opt3_b] > option").eq(0).prop("selected", true);
-									$("select[name=opt3_c] > option").eq(0).prop("selected", true);
-								});
-								$("select[name=opt3_b]").on("change", function () {
-									$("select[name=opt3_c] > option").remove();
-									$("select[name=opt3_c]").append(opt3_c_con);
-									var cid = $("select[name=opt3_b] > option:selected").data("cid");
-									$(".opt3_copt").each( function (x) {
-										if($(this).data("pid") != cid) { $(this).remove();}
+									$("select[name=opt3_b]").on("change", function () {
+										$("select[name=opt3_c] > option").remove();
+										$("select[name=opt3_c]").append(opt3_c_con);
+										var cid = $("select[name=opt3_b] > option:selected").data("cid");
+										$(".opt3_copt").each(function (x) {
+											if ($(this).data("pid") != cid) { $(this).remove(); }
+										});
+										$("select[name=opt3_c] > option").eq(0).prop("selected", true);
 									});
-									$("select[name=opt3_c] > option").eq(0).prop("selected", true);
-								});
 
 								</script>
 							</li>
@@ -178,7 +196,11 @@ $second_page = "consulting";
 									foreach($arr[category_name] as $key => $v) {
 										$parent = get_parent_dd($arr['cid'][$key]);
 									?>
-									<option class="opt4_aopt" value="<?php echo $v ?>" data-cid="<?php echo $arr['cid'][$key] ?>" data-pid="<?php echo $parent['cid'] ?>"><?php echo $v ?></option>
+									<option class="opt4_aopt" value="<?php echo $v ?>"
+										data-cid="<?php echo $arr['cid'][$key] ?>"
+										data-pid="<?php echo $parent['cid'] ?>">
+										<?php echo $v ?>
+									</option>
 									<?php
 									}
 									?>
@@ -190,30 +212,35 @@ $second_page = "consulting";
 									foreach($arr[category_name] as $key => $v) {
 										$parent = get_parent_dd($arr['cid'][$key]);
 									?>
-									<option class="opt4_bopt" value="<?php echo $v ?>" data-cid="<?php echo $arr['cid'][$key] ?>" data-pid="<?php echo $parent['cid'] ?>"><?php echo $v ?></option>
+									<option class="opt4_bopt" value="<?php echo $v ?>"
+										data-cid="<?php echo $arr['cid'][$key] ?>"
+										data-pid="<?php echo $parent['cid'] ?>">
+										<?php echo $v ?>
+									</option>
 									<?php
 									}
 									?>
 								</select>
 								<script>
-								var opt4_b_con = $("select[name=opt4_b]").html();
+									var opt4_b_con = $("select[name=opt4_b]").html();
 
-								$(".opt4_bopt").remove();
+									$(".opt4_bopt").remove();
 
-								$("select[name=opt4_a]").on("change", function () {
-									$("select[name=opt4_b] > option").remove();
-									$("select[name=opt4_b]").append(opt4_b_con);
-									var cid = $("select[name=opt4_a] > option:selected").data("cid");
-									$(".opt4_bopt").each( function (x) {
-										if($(this).data("pid") != cid) { $(this).remove();}
+									$("select[name=opt4_a]").on("change", function () {
+										$("select[name=opt4_b] > option").remove();
+										$("select[name=opt4_b]").append(opt4_b_con);
+										var cid = $("select[name=opt4_a] > option:selected").data("cid");
+										$(".opt4_bopt").each(function (x) {
+											if ($(this).data("pid") != cid) { $(this).remove(); }
+										});
+										$("select[name=opt4_b] > option").eq(0).prop("selected", true);
 									});
-									$("select[name=opt4_b] > option").eq(0).prop("selected", true);
-								});
 								</script>
 							</li>
 							<!-- <li><label for="opt4_cnt">수량</label><input id="opt4_cnt" type="text" name="opt4_cnt"/></li> -->
 						</ul>
-						<span class="error_next_box c4" id="pswd2Msg" style="" role="alert">'선택1' 또는 '선택2' 작성이 필요합니다.</span>
+						<span class="error_next_box c4" id="pswd2Msg" style="" role="alert">'선택1' 또는 '선택2' 작성이
+							필요합니다.</span>
 					</div>
 				</div>
 
@@ -224,19 +251,19 @@ $second_page = "consulting";
 				<input class="single_btn" type="submit" value="컨설팅 문의하기"></input>
 			</form>
 			<script>
-			function f_submit() {
-				var state = true;
-				$("input[type='text']").each( function (x) {
-					if(!$("input[type='text']").eq(x).val()) {
-						$("input[type='text']").eq(x).siblings(".error_next_box").show();
-						state = false;
-					} else {
-						$("input[type='text']").eq(x).siblings(".error_next_box").hide();
-					}
-				});
+				function f_submit() {
+					var state = true;
+					$("input[type='text']").each(function (x) {
+						if (!$("input[type='text']").eq(x).val()) {
+							$("input[type='text']").eq(x).siblings(".error_next_box").show();
+							state = false;
+						} else {
+							$("input[type='text']").eq(x).siblings(".error_next_box").hide();
+						}
+					});
 
-				return state;
-			}
+					return state;
+				}
 			</script>
 		</div>
 	</div>

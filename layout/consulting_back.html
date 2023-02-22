@@ -1,171 +1,173 @@
-	<div class="sub_vis sub_vis601">
-		<p><span>제이솔루션은 B2B 전문 컨설팅 회사로<br>기업의 사업환경에 적합한 상품을 제공합니다.</span>맞춤 컨설팅</p>
-		<!-- <p><span>텍스트2</span>커브드 모니터</p>
+<div class="sub_vis sub_vis601">
+	<p><span>제이솔루션은 B2B 전문 컨설팅 회사로<br>기업의 사업환경에 적합한 상품을 제공합니다.</span>맞춤 컨설팅</p>
+	<!-- <p><span>텍스트2</span>커브드 모니터</p>
 		<p><span>텍스트3</span>비디오 월</p>
 		<p><span>텍스트4</span>모니터</p>
 		<p><span>텍스트5</span>일반TV</p> -->
-	</div>
-	<hr>
-	<?php include_once("inc/sub_loc.php");?>
-	<div id="page_wrap">
-		<div id="cs_consulting">
-			<h3 class="stit"><b>맞춤 컨설팅</b></h3>
-			<form action="estimate_result.php" onsubmit="return f_submit();" method="POST">
-				<input type="hidden" name="mod" value="05_ct" />
-				<div class="cst_info_area">
-					<h4>고객정보</h4>
-					<ul class="cst_info_box">
-						<li>
-							<label for="buyer_company">기업명</label><input id="buyer_company" type="text" name="buyer_company"  />
-							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
-						</li>
-						<li>
-							<label for="buyer_company_number">사업자등록번호</label><input id="buyer_company_number" type="text" name="buyer_company_number"  />
-							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
-						</li>
-						<li>
-							<label for="buyer_name">담당자명</label><input id="buyer_name" type="text" name="buyer_name"  />
-							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
-						</li>
-						<li>
-							<label for="buyer_sphone">연락처</label><input id="buyer_sphone" type="text" name="buyer_sphone" />
-							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
-						</li>
-						<li>
-							<label for="buyer_addr">사업장 주소</label><input id="buyer_addr" type="text" name="buyer_addr"  />
-							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
-						</li>
-						<li>
-							<label for="buyer_email">이메일</label><input id="buyer_email" type="text" name="buyer_email"  />
-							<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
-						</li>
-					</ul>
-				</div>
-				<div class="cst_like_area">
-					<h4>관심 업종</h4>
-					<ul>
-						<li><input type="checkbox" name="opt1[]" value="요식업">요식업</li>
-						<li><input type="checkbox" name="opt1[]" value="학교/학원">학교/학원</li>
-						<li><input type="checkbox" name="opt1[]" value="보안">보안</li>
-						<li><input type="checkbox" name="opt1[]" value="병원">병원</li>
-						<li><input type="checkbox" name="opt1[]" value="광고/마케팅">광고/마케팅</li>
-						<li><input type="checkbox" name="opt1[]" value="쇼핑몰">쇼핑몰</li>
-						<li><input type="checkbox" name="opt1[]" value="콜센터">콜센터</li>
-						<li><input type="checkbox" name="opt1[]" value="상점">상점</li>
-						<li><input type="checkbox" name="opt1[]" value="빌딩/건설">빌딩/건설</li>
-						<li><input type="checkbox" name="opt1[]" value="사무실">사무실</li>
-						<li><input type="checkbox" name="opt1[]" value="스마트홈">스마트홈</li>
-						<li><input type="checkbox" name="opt1[]" value="농장">농장</li>
-						<li><input type="checkbox" name="opt1[]" value="유통">유통</li>
-						<li><input type="checkbox" name="opt1[]" value="가스/전력">가스/전력</li>
-						<li><input type="checkbox" name="opt1[]" value="기타">기타</li>
-					</ul>
-					<span id="c2" class="error_next_box" style="" role="alert">필수 정보입니다.</span>
-				</div>
-				<div class="cst_prod_area">
-					<h4>제품/솔루션</h4>
-					<ul class="cst_chk_box">
-						<li><input type="checkbox" name="opt2" value="솔루션">솔루션</li>
-					</ul>
-					<span id="c3" class="error_next_box" style="" role="alert">필수 정보입니다.</span>
-				</div>
+</div>
+<hr>
+<?php include_once("inc/sub_loc.php");?>
+<div id="page_wrap">
+	<div id="cs_consulting">
+		<h3 class="stit"><b>맞춤 컨설팅</b></h3>
+		<form action="estimate_result.php" onsubmit="return f_submit();" method="POST">
+			<input type="hidden" name="mod" value="05_ct" />
+			<div class="cst_info_area">
+				<h4>고객정보</h4>
+				<ul class="cst_info_box">
+					<li>
+						<label for="buyer_company">기업명</label><input id="buyer_company" type="text"
+							name="buyer_company" />
+						<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+					</li>
+					<li>
+						<label for="buyer_company_number">사업자등록번호</label><input id="buyer_company_number" type="text"
+							name="buyer_company_number" />
+						<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+					</li>
+					<li>
+						<label for="buyer_name">담당자명</label><input id="buyer_name" type="text" name="buyer_name" />
+						<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+					</li>
+					<li>
+						<label for="buyer_sphone">연락처</label><input id="buyer_sphone" type="text" name="buyer_sphone" />
+						<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+					</li>
+					<li>
+						<label for="buyer_addr">사업장 주소</label><input id="buyer_addr" type="text" name="buyer_addr" />
+						<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+					</li>
+					<li>
+						<label for="buyer_email">이메일</label><input id="buyer_email" type="text" name="buyer_email" />
+						<span class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+					</li>
+				</ul>
+			</div>
+			<div class="cst_like_area">
+				<h4>관심 업종</h4>
+				<ul>
+					<li><input type="checkbox" name="opt1[]" value="요식업">요식업</li>
+					<li><input type="checkbox" name="opt1[]" value="학교/학원">학교/학원</li>
+					<li><input type="checkbox" name="opt1[]" value="보안">보안</li>
+					<li><input type="checkbox" name="opt1[]" value="병원">병원</li>
+					<li><input type="checkbox" name="opt1[]" value="광고/마케팅">광고/마케팅</li>
+					<li><input type="checkbox" name="opt1[]" value="쇼핑몰">쇼핑몰</li>
+					<li><input type="checkbox" name="opt1[]" value="콜센터">콜센터</li>
+					<li><input type="checkbox" name="opt1[]" value="상점">상점</li>
+					<li><input type="checkbox" name="opt1[]" value="빌딩/건설">빌딩/건설</li>
+					<li><input type="checkbox" name="opt1[]" value="사무실">사무실</li>
+					<li><input type="checkbox" name="opt1[]" value="스마트홈">스마트홈</li>
+					<li><input type="checkbox" name="opt1[]" value="농장">농장</li>
+					<li><input type="checkbox" name="opt1[]" value="유통">유통</li>
+					<li><input type="checkbox" name="opt1[]" value="가스/전력">가스/전력</li>
+					<li><input type="checkbox" name="opt1[]" value="기타">기타</li>
+				</ul>
+				<span id="c2" class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+			</div>
+			<div class="cst_prod_area">
+				<h4>제품/솔루션</h4>
+				<ul class="cst_chk_box">
+					<li><input type="checkbox" name="opt2" value="솔루션">솔루션</li>
+				</ul>
+				<span id="c3" class="error_next_box" style="" role="alert">필수 정보입니다.</span>
+			</div>
 
-				<div class="cst_slt_area">
-					<div class="cst_slt_box">
-						<h4>제품/수량<em>(필수 선택1)</em></h4>
-						<ul class="cst_pro_slt">
-							<li>
-								<label for="opt3_a">제품 선택</label>
-								<select name="opt3_a">
-									<option value="">대분류 선택</option>
-									<option value="통신상품">통신상품</option>
-									<option value="전자상품">전자상품</option>
-									<option value="ICT 및 솔루션">ICT 및 솔루션</option>
-								</select>
-								<select name="opt3_b">
-									<option value="">중분류 선택</option>
-									<option value="기업전화">기업전화</option>
-									<option value="인터넷">인터넷</option>
-									<option value="IOT">IOT</option>
-									<option value="결합상품">결합상품</option>
-									<option value="소호상품">소호상품</option>
-									<option value="솔루션">솔루션</option>
-								</select>
-								<select name="opt3_c">
-									<option value="">제품 선택</option>
-									<option value="전화">전화</option>
-									<option value="인터넷전화">인터넷전화</option>
-									<option value="모바일">모바일</option>
-								</select>
-								<select name="opt3_d">
-									<option value="">모델 선택</option>
-									<option value="시내전화">시내전화</option>
-									<option value="구내통신">구내통신</option>
-									<option value="전국대표번호">전국대표번호</option>
-									<option value="무료전화080">무료전화080</option>
-								</select>
-							</li>
-							<li><label for="opt3_cnt">수량</label><input id="opt3_cnt" type="text" name="opt3_cnt"/></li>
-						</ul>
-						<span class="error_next_box c4" style="" role="alert">'선택1' 또는 '선택2' 작성이 필요합니다.</span>
-					</div>
-					<div class="cst_slt_box">
-						<h4>솔루션<em>(필수 선택2)</em></h4>
-						<ul class="cst_sol_slt">
-							<li>
-								<label for="opt4_a">솔루션 선택</label>
-								<select name="opt4_a">
-									<option value="">솔루션 선택</option>
-									<option value="솔루션1">솔루션1</option>
-									<option value="솔루션2">솔루션2</option>
-								</select>
-								<select name="opt4_b">
-									<option value="">상품 선택</option>
-									<option value="기업전화">기업전화</option>
-									<option value="인터넷">인터넷</option>
-									<option value="IOT">IOT</option>
-									<option value="결합상품">결합상품</option>
-									<option value="소호상품">소호상품</option>
-									<option value="솔루션">솔루션</option>
-								</select>
-							</li>
-							<li><label for="opt4_cnt">수량</label><input id="opt4_cnt" type="text" name="opt4_cnt"/></li>
-						</ul>
-						<span class="error_next_box c4" id="pswd2Msg" style="" role="alert">'선택1' 또는 '선택2' 작성이 필요합니다.</span>
-					</div>
+			<div class="cst_slt_area">
+				<div class="cst_slt_box">
+					<h4>제품/수량<em>(필수 선택1)</em></h4>
+					<ul class="cst_pro_slt">
+						<li>
+							<label for="opt3_a">제품 선택</label>
+							<select name="opt3_a">
+								<option value="">대분류 선택</option>
+								<option value="통신상품">통신상품</option>
+								<option value="전자상품">전자상품</option>
+								<option value="ICT 및 솔루션">ICT 및 솔루션</option>
+							</select>
+							<select name="opt3_b">
+								<option value="">중분류 선택</option>
+								<option value="기업전화">기업전화</option>
+								<option value="인터넷">인터넷</option>
+								<option value="IOT">IOT</option>
+								<option value="결합상품">결합상품</option>
+								<option value="소호상품">소호상품</option>
+								<option value="솔루션">솔루션</option>
+							</select>
+							<select name="opt3_c">
+								<option value="">제품 선택</option>
+								<option value="전화">전화</option>
+								<option value="인터넷전화">인터넷전화</option>
+								<option value="모바일">모바일</option>
+							</select>
+							<select name="opt3_d">
+								<option value="">모델 선택</option>
+								<option value="시내전화">시내전화</option>
+								<option value="구내통신">구내통신</option>
+								<option value="전국대표번호">전국대표번호</option>
+								<option value="무료전화080">무료전화080</option>
+							</select>
+						</li>
+						<li><label for="opt3_cnt">수량</label><input id="opt3_cnt" type="text" name="opt3_cnt" /></li>
+					</ul>
+					<span class="error_next_box c4" style="" role="alert">'선택1' 또는 '선택2' 작성이 필요합니다.</span>
 				</div>
+				<div class="cst_slt_box">
+					<h4>솔루션<em>(필수 선택2)</em></h4>
+					<ul class="cst_sol_slt">
+						<li>
+							<label for="opt4_a">솔루션 선택</label>
+							<select name="opt4_a">
+								<option value="">솔루션 선택</option>
+								<option value="솔루션1">솔루션1</option>
+								<option value="솔루션2">솔루션2</option>
+							</select>
+							<select name="opt4_b">
+								<option value="">상품 선택</option>
+								<option value="기업전화">기업전화</option>
+								<option value="인터넷">인터넷</option>
+								<option value="IOT">IOT</option>
+								<option value="결합상품">결합상품</option>
+								<option value="소호상품">소호상품</option>
+								<option value="솔루션">솔루션</option>
+							</select>
+						</li>
+						<li><label for="opt4_cnt">수량</label><input id="opt4_cnt" type="text" name="opt4_cnt" /></li>
+					</ul>
+					<span class="error_next_box c4" id="pswd2Msg" style="" role="alert">'선택1' 또는 '선택2' 작성이 필요합니다.</span>
+				</div>
+			</div>
 
-				<div class="cst_add_box">
-					<h4>요청사항</h4>
-					<textarea name="opt_etc" placeholder="추가 요청사항이 있을 경우, 작성해주세요."></textarea>
-				</div>
-				<input class="single_btn" type="submit" value="컨설팅 문의하기"></input>
-			</form>
-			<script>
+			<div class="cst_add_box">
+				<h4>요청사항</h4>
+				<textarea name="opt_etc" placeholder="추가 요청사항이 있을 경우, 작성해주세요."></textarea>
+			</div>
+			<input class="single_btn" type="submit" value="컨설팅 문의하기"></input>
+		</form>
+		<script>
 			function f_submit() {
 				var state = true;
-				$("input[type='text']").each( function (x) {
-					if(!$("input[type='text']").eq(x).val()) {
+				$("input[type='text']").each(function (x) {
+					if (!$("input[type='text']").eq(x).val()) {
 						$("input[type='text']").eq(x).siblings(".error_next_box").show();
 						state = false;
 					} else {
 						$("input[type='text']").eq(x).siblings(".error_next_box").hide();
 					}
 				});
-				if(!$("input[name='opt1[]']:checked").length) {
+				if (!$("input[name='opt1[]']:checked").length) {
 					$("#c2").show();
 					state = false;
 				} else {
 					$("#c2").hide();
 				}
 
-				if(!$("input[name='opt2']:checked").length) {
+				if (!$("input[name='opt2']:checked").length) {
 					$("#c3").show();
 					state = false;
 				} else {
 					$("#c3").hide();
 				}
-				if(!$("select[name='opt3_a'] > option:checked").val() && !$("select[name='opt4_a'] > option:checked").val()) {
+				if (!$("select[name='opt3_a'] > option:checked").val() && !$("select[name='opt4_a'] > option:checked").val()) {
 					$(".c4").show();
 					state = false;
 				} else {
@@ -173,6 +175,6 @@
 				}
 				return state;
 			}
-			</script>
-		</div>
+		</script>
 	</div>
+</div>

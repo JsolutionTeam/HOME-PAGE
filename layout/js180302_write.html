@@ -1,5 +1,8 @@
 <style>
-ul .hidden_box { width: 622.2px; height: 42.2px; }
+	ul .hidden_box {
+		width: 622.2px;
+		height: 42.2px;
+	}
 </style>
 
 <div id="container">
@@ -12,32 +15,34 @@ ul .hidden_box { width: 622.2px; height: 42.2px; }
 					<ul class="cst_info_box">
 						<li class="hidden_box">
 							<label for="name">작성자</label>
-							<input id="name" type="text" name="name" placeholder="ex) 홍길동"/>
+							<input id="name" type="text" name="name" placeholder="ex) 홍길동" />
 						</li>
 						<li class="hidden_box">
 						</li>
 
 						<li class="hidden_box">
 							<label for="cusname">고객 성명</label>
-							<input id="cusname" type="text" name="cusname" placeholder="ex) 홍길동"/>
+							<input id="cusname" type="text" name="cusname" placeholder="ex) 홍길동" />
 						</li>
 						<li class="hidden_box">
 							<label for="birth">생년월일</label>
-							<input id="birth" type="text" name="birth" placeholder="ex) 19851223"/>
+							<input id="birth" type="text" name="birth" placeholder="ex) 19851223" />
 						</li>
 
 						<li class="hidden_box">
 							<label for="phone">폰번호</label>
-							<input id="phone" type="text" name="phone" placeholder="ex) 01012341234"/>
+							<input id="phone" type="text" name="phone" placeholder="ex) 01012341234" />
 						</li>
 						<li class="hidden_box">
 							<label for="counsel_date">상담일자</label>
-							<input id="counsel_date" type="text" name="counsel_date" placeholder="ex) 20190814"/>
+							<input id="counsel_date" type="text" name="counsel_date" placeholder="ex) 20190814" />
 						</li>
 
 						<li class="hidden_box">
 							<label for="phone_type">현통신사</label>
-							<select id="phone_type" name="phone_type" style="width: 302px; height: 46px; padding: 0 10px; margin-left: 3px; font-size: 16px; border: 1px solid #ccc;" onchange="phone_Change()">
+							<select id="phone_type" name="phone_type"
+								style="width: 302px; height: 46px; padding: 0 10px; margin-left: 3px; font-size: 16px; border: 1px solid #ccc;"
+								onchange="phone_Change()">
 								<option value="선택안함">선택안함</option>
 								<option value="SKT">SKT</option>
 								<option value="KT">KT</option>
@@ -47,18 +52,19 @@ ul .hidden_box { width: 622.2px; height: 42.2px; }
 						</li>
 						<li class="hidden_box">
 							<label for="payment_type">요금제</label>
-							<select id="payment_type" name="payment_type" style="width: 302px; height: 46px; padding: 0 10px; margin-left: 3px; font-size: 16px; border: 1px solid #ccc;">
+							<select id="payment_type" name="payment_type"
+								style="width: 302px; height: 46px; padding: 0 10px; margin-left: 3px; font-size: 16px; border: 1px solid #ccc;">
 								<option value="선택안함">선택안함</option>
 							</select>
 						</li>
 
 						<li class="hidden_box">
 							<label for="combin">결합여부</label>
-							<input id="combin" type="text" name="combin"/>
+							<input id="combin" type="text" name="combin" />
 						</li>
 						<li class="hidden_box">
 							<label for="cusneeds">요청사항</label>
-							<input id="cusneeds" type="text" name="cusneeds"/>
+							<input id="cusneeds" type="text" name="cusneeds" />
 						</li>
 					</ul>
 				</div>
@@ -73,15 +79,15 @@ ul .hidden_box { width: 622.2px; height: 42.2px; }
 
 			<script>
 
-				$("#phone").keyup(function(e) {
+				$("#phone").keyup(function (e) {
 					$(this).val(inputChkNumber(this, 0, 11));
 				});
 
-				$("#birth").keyup(function(e) {
+				$("#birth").keyup(function (e) {
 					$(this).val(inputChkNumber(this, 0, 8));
 				});
 
-				$("#counsel_date").keyup(function(e) {
+				$("#counsel_date").keyup(function (e) {
 					$(this).val(inputChkNumber(this, 0, 8));
 				});
 
@@ -95,7 +101,7 @@ ul .hidden_box { width: 622.2px; height: 42.2px; }
 					var changelist = null;
 					var count = 0;
 
-					switch(select) {
+					switch (select) {
 						case "SKT":
 							changelist = SKT
 							break;
@@ -117,8 +123,7 @@ ul .hidden_box { width: 622.2px; height: 42.2px; }
 					}
 
 					change.empty();
-					while (changelist[count] != null)
-					{
+					while (changelist[count] != null) {
 						var option = $("<option>" + changelist[count] + "</option>");
 						change.append(option);
 						count++;
@@ -129,12 +134,10 @@ ul .hidden_box { width: 622.2px; height: 42.2px; }
 					var v = $(ID).val();
 					v = v.replace(/[^0-9]/gi, '');
 
-					if (ID.value != v)
-					{
+					if (ID.value != v) {
 						alert("숫자만 입력 가능합니다.");
-					} 
-					else 
-					{
+					}
+					else {
 						v = v.substring(First, Last);
 					}
 
@@ -142,16 +145,14 @@ ul .hidden_box { width: 622.2px; height: 42.2px; }
 				}
 
 				function changeHypen(Str, Number) {
-					if (Str.indexOf("-") != -1)
-					{
+					if (Str.indexOf("-") != -1) {
 						return Str;
 					}
 
 					var buffer = "";
 
-					for (var count = 1; Number[count] != null; count++)
-					{
-						buffer = buffer + Str.substring(Number[count-1], Number[count]) + "-";
+					for (var count = 1; Number[count] != null; count++) {
+						buffer = buffer + Str.substring(Number[count - 1], Number[count]) + "-";
 					}
 					buffer = buffer + Str.substring(Number[Number.length - 1], Str.length);
 
