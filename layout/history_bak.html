@@ -1,65 +1,57 @@
 <div class="section">
-	<?php
+<?php
 
 ?>
-	<?php include_once("inc/sub_loc.php"); ?>
-	<hr>
+<?php include_once("inc/sub_loc.php"); ?>
+<hr>
 	<div id="page_wrap">
 		<div id="history">
 			<h3 class="stit"><b>연혁</b></h3>
 			<ul class="tree">
 				<?php foreach($his_year as $key => $v) { ?>
-				<li class="tree-limb">
-					<div class="tree-year">
-						<span>
-							<?php echo $v['banner_addfield_01'] ?>
-						</span>
-					</div>
-					<div class="tree-month">
-						<ol>
-							<?php
+					<li class="tree-limb">
+						<div class="tree-year">
+							<span><?php echo $v['banner_addfield_01'] ?></span>
+						</div>
+						<div class="tree-month">
+							<ol>
+								<?php
 								$now_h = 0;
 								foreach($his_arr[$v['banner_addfield_01']] as $key2 => $v2) {
 								?>
-							<li class="event">
-								<?php foreach($v2 as $key3 => $v3) { ?>
-								<p>
-									<span class="date">
-										<?php echo $v3['banner_addfield_02'] ?>
-									</span>
-									<?php echo $v3['banner_name'] ?>
-								</p>
-								<?php if($v3['banner_image']) { ?>
-								<div class="frame">
-									<a href="javascript:;" class="ori_img"
-										data-ori="<?php echo MAX_HOST_DATA ?>/banner/<?php echo $v3['banner_image'] ?>">
-										<img src="<?php echo MAX_HOST_DATA ?>/banner/<?php echo $v3['banner_image'] ?>"
-											alt="이미지">
-									</a>
-								</div>
+									<li class="event">
+										<?php foreach($v2 as $key3 => $v3) { ?>
+											<p>
+												<span class="date"><?php echo $v3['banner_addfield_02'] ?></span>
+												<?php echo $v3['banner_name'] ?>
+											</p>
+											<?php if($v3['banner_image']) { ?>
+												<div class="frame">
+													<a href="javascript:;" class="ori_img" data-ori="<?php echo MAX_HOST_DATA ?>/banner/<?php echo $v3['banner_image'] ?>">
+														<img src="<?php echo MAX_HOST_DATA ?>/banner/<?php echo $v3['banner_image'] ?>" alt="이미지">
+													</a>
+												</div>
+											<?php } ?>
+										<?php } ?>
+									</li>
 								<?php } ?>
-								<?php } ?>
-							</li>
-							<?php } ?>
-						</ol>
-					</div>
-				</li>
+							</ol>
+						</div>
+					</li>
 				<?php } ?>
 			</ul>
 
 			<?php if ( $max_member['member_level_type'] === 'A' ) { ?>
-			<div style="width:100%; padding-top:20px; padding-bottom:20px; text-align:center;">
-				<a href="http://www.j-sol.co.kr/shop/admin_new/manage_design_banner_write.php?dir=maxskin_basic&bcode=index_history"
-					target="_blank">
-					<button class="btn_b_type02">수정</button>
-				</a>
-			</div>
+				<div style="width:100%; padding-top:20px; padding-bottom:20px; text-align:center;">
+					<a href="http://www.j-sol.co.kr/shop/admin_new/manage_design_banner_write.php?dir=maxskin_basic&bcode=index_history" target="_blank">
+						<button class="btn_b_type02">수정</button>
+					</a>
+				</div>
 			<?php } ?>
 
 			<div id="layer">
 				<div class="layer_con">
-					<img src="http://bizwell2.dmax.kr/shop/data/banner/43c3b47912dab0ac47766204a40577db.png"
-						id="layer_img" alt="이미지" />
+					<img src="http://bizwell2.dmax.kr/shop/data/banner/43c3b47912dab0ac47766204a40577db.png" id="layer_img" alt="이미지" />
 					<a href="javascript:;" class="layer_close">닫기</a>
 				</div>
 			</div>

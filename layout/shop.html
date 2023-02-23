@@ -13,11 +13,13 @@
 		border: 1px solid #ddd;
 		text-align: center;
 		background: #fff;
+		border-radius: 5px;
 	}
 
 	.shop_pic img {
 		width: 100%;
 		height: 100%;
+		border-radius: 5px;
 	}
 
 	.shop_txt {
@@ -65,51 +67,55 @@ $first_page = "shop";
 $second_page = "shop";
 ?>
 
+<script>
+	const xhr = new XMLHttpRequest();
+	xhr.open('GET', '../js/shop.json');
+	xhr.onload = function () {
+		if (xhr.status === 200) {
+			const data = JSON.parse(xhr.responseText);
+
+			const row = document.getElementById("row")
+
+			data.forEach(function (item, index) {
+				const rNewPrice = item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+
+				const div = document.createElement('div');
+				div.setAttribute("class", "col-xs-12 col-sm6 col-md-4 col-lg-3 margin2");
+				div.innerHTML =
+					`<div class="shop_pic"><img src="image/` + item.img + `"></div>
+					<div class="shop_txt">
+						<p class="shop_tit">` + item.name + `</p>
+						<p class="shop_price">` + rNewPrice + `원</p>
+						<a href="../shop_detail.php?model=` + item.model + `">
+						<p class="shop_btn">신청하기<p>
+					</a>
+				</div>`;
+
+				row.appendChild(div)
+			});
+		}
+	};
+	xhr.send();
+
+</script>
+
 
 <div class="section">
 	<?php include_once("inc/sub_loc2.php");?>
 	<?php include_once("inc/sub_menu.php");?>
 	<div id="page_wrap">
 
-		<BODY>
-
-			</HEADER>
+		<body>
 			<div style="width:100%;background:#fafafa;">
 				<div id="location" style="padding:2% 0;">
-					<h3 class="stit"><b>쇼핑몰</b></span></h3>
-					<DIV id="wrapper">
-						<!--
-		<ul class="shop_list">
-			<li>
-				<div class="shop_box">
-					<div class="shop_pic"><img src="image/s23.png"><div>
-					<div class="shop_txt">
-						<p class="shop_tit">삼성 S23</p>
-						<p class="shop_price">2,000,0000원</p>
-					</div>
-				</div>
-			</li>
-			
-			<li>
-				<div class="shop_box">
-					<div class="shop_pic"><img src="image/s23.png"><div>
-					<div class="shop_txt">
-						<p class="shop_tit">삼성 S23</p>
-						<p class="shop_price">2,000,0000원</p>
-					</div>
-				</div>
-			</li>
-		</ul>
-	-->
-					</div>
 					<div class="container">
-						<div class="row">
-							<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
+						<div class="row" id="row">
+							<!-- <div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
 								<div class="shop_pic"><img src="image/s23_.png"></div>
 								<div class="shop_txt">
 									<p class="shop_tit">삼성 S23</p>
 									<p class="shop_price">1,155,000원</p>
-									<a href="#">
+									<a href="../shop_detail.php?id=SM-S911NK">
 										<p class="shop_btn">신청하기<p>
 									</a>
 								</div>
@@ -119,7 +125,7 @@ $second_page = "shop";
 								<div class="shop_txt">
 									<p class="shop_tit">갤럭시 S23+</p>
 									<p class="shop_price">1,353,000원</p>
-									<a href="#">
+									<a href="../shop_detail.php?id=SM-S916NK">
 										<p class="shop_btn">신청하기<p>
 									</a>
 								</div>
@@ -373,22 +379,11 @@ $second_page = "shop";
 										<p class="shop_btn">신청하기<p>
 									</a>
 								</div>
-							</div>
-							<!--
-			<div class="col-xs-12 col-sm6 col-md-4 col-lg-3 margin2">
-				<div class="shop_pic"><img src="image/s23.png"></div>
-				<div class="shop_txt">
-					<p class="shop_tit"></p>
-					<p class="shop_price"></p>
-					<a href="#"><p class="shop_btn">신청하기<p></a>
-				</div>
-			</div>
-			-->
-
+							</div> -->
 						</div>
 					</div>
 				</div>
-
 			</div>
-
-			<div
+		</body>
+	</div>
+</div>

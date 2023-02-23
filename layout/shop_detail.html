@@ -1,3 +1,462 @@
-<div>
-  <p></p>
+<style>
+    .content {
+        width: 100%;
+    }
+
+    .content_header {
+        border-bottom: 1px solid #000;
+        padding-bottom: 15px;
+    }
+
+    .content_header p {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin: 0 7px;
+    }
+
+    .content_main {
+        display: flex;
+        flex-direction: row;
+
+    }
+
+    .model_img {
+        padding: 15px;
+        flex: 1;
+
+    }
+
+    .model_img img {
+        width: 100%;
+        border: 1px solid #d3d3d3;
+        border-radius: 5px;
+    }
+
+    .model_content {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .model_content .item {
+        margin-bottom: 10px;
+    }
+
+    .model_payment {
+        border-bottom: 1px solid #d9d9d9;
+        margin-bottom: 15px;
+    }
+
+    .model_payment_list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .model_payment_list .title {
+        font-size: 19px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #000;
+    }
+
+    .model_payment_list .list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .model_payment_list .list div {
+        border: 1px solid #d3d3d3;
+        font-size: 14px;
+        border-radius: 3px;
+        color: #777;
+        padding: 14px 20px;
+        background-color: #f4f4f4;
+        text-align: center;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+    .model_payment_list .list .payment p {
+        margin: 2px 0;
+    }
+
+
+    .model_payment_price,
+    .model_sale_price,
+    .model_installment_price,
+    .model_price {
+        display: flex;
+        flex-direction: row;
+        padding-left: 5px;
+    }
+
+    .model_payment_price .title,
+    .model_sale_price .title,
+    .model_installment_price .title,
+    .model_price .title {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .model_payment_price .price,
+    .model_sale_price .price,
+    .model_installment_price .price,
+    .model_price .price {
+        margin-left: auto;
+        font-size: 16px;
+    }
+
+    .model_sale_price {
+        color: #d90000;
+    }
+
+    .model_payment_price,
+    .model_installment_price {
+        color: #000;
+        font-weight: bold;
+    }
+
+    .model_payment_price .title,
+    .model_payment_price .price,
+    .model_installment_price .title,
+    .model_installment_price .price {
+        font-size: 18px;
+    }
+
+
+    .model_monthly_price {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid #d9d9d9;
+        padding-top: 25px;
+    }
+
+    .model_monthly_price .title {
+        margin: 0;
+    }
+
+    .model_monthly_price .title {
+        font-size: 19px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #000;
+    }
+
+    .model_monthly_price .price {
+        margin-left: auto;
+        font-size: 28px;
+        color: #000;
+        font-weight: bold;
+    }
+
+    .model_monthly_price .subscription {
+        margin-left: auto;
+        font-size: 15px;
+    }
+
+
+
+
+    .model_all_monthly_price {
+        display: flex;
+        flex-direction: row;
+        border-top: 1px solid #d9d9d9;
+        padding-top: 10px;
+    }
+
+    .model_all_monthly_price .title {
+        margin: 0;
+    }
+
+    .model_all_monthly_price .title {
+        font-size: 19px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #000;
+    }
+
+    .model_all_monthly_price .price {
+        margin-left: auto;
+        color: #d90000;
+        font-weight: bold;
+        font-size: 20px;
+
+    }
+
+    .model_all_monthly_price span {
+        font-size: 14px;
+    }
+
+
+    .notice {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        border: 3px solid #d9d9d9;
+        border-radius: 5px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .notice_header {
+        margin-bottom: 10px;
+    }
+
+    .notice_header p {
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .notice_main p {
+        white-space: wrap;
+    }
+
+    .model_content>.bottoms {
+        margin-top: auto;
+        text-align: center;
+    }
+
+    .model_content>.bottoms>.content_btn {
+        background: #d90000;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 5px;
+        margin: 0 auto;
+        padding: 1% 25px;
+    }
+
+    .model_content>.bottoms>.content_btn>p {
+        font-size: 16px;
+    }
+</style>
+
+<?php
+$first_page = "shop";
+$second_page = "shop";
+?>
+
+<script>
+    function regPriceReplace(price) {
+        return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+
+    const id = new URL(location.href).searchParams.get("model");
+    let modelDatas = [];
+    let filterData = {}
+    // 요금제 ( default : 슈퍼플랜베이직 )
+    let modelPayment = 80000;
+
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '../js/shop.json');
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            modelDatas = JSON.parse(xhr.responseText);
+            filterData = modelDatas.filter((item) => item.model === id)[0];
+
+            // 요금제 defaultCheck
+            document.getElementById("super_plan_basic").style.backgroundColor = "#ffffff";
+            document.getElementById("super_plan_basic").style.borderColor = "#d90000";
+            document.getElementById("super_plan_basic").style.color = "#d90000";
+            document.getElementById("super_plan_basic").style.fontWeight = "bold";
+
+            // 사진
+            document.getElementById("img").src = `image/` + filterData.img;
+
+            // 모델명
+            document.getElementById("model_name").innerText = filterData.name;
+
+            // 월 통신요금 (요금제 - 25%)
+            const rPaymentPrice = modelPayment - (modelPayment * 25 / 100);
+            document.getElementById("model_payment_price").innerText = regPriceReplace(rPaymentPrice) + "원";
+            // 요금할인 (25%)
+            const rSalePaymentPrice = modelPayment - rPaymentPrice;
+            document.getElementById("model_sale_price").innerText = "- " + regPriceReplace(rSalePaymentPrice) + "원";
+
+            // 출고가
+            const rNewPrice = regPriceReplace(filterData.price);
+            document.getElementById("model_price").innerText = rNewPrice + "원";
+            // 월 할부금 ( 출고가 / 24 )
+            const rMonthlyPayment = Math.floor(filterData.price / 24);
+            document.getElementById("model_monthly_payment").innerText = regPriceReplace(rMonthlyPayment) + "원";
+
+            // 월 요금 (요금제 - 25%) + 월할부금
+            const rMonthlyPrice = (modelPayment - (modelPayment * 25 / 100)) + rMonthlyPayment;
+            document.getElementById("model_monthly_price").innerText = "월 " + regPriceReplace(rMonthlyPrice) + "원";
+            // 월 요금 부가설명
+            document.getElementById("model_monthly_price_subscription").innerText =
+                "월 통신요금(" + regPriceReplace(rPaymentPrice) + "원) + 월 할부금(" + regPriceReplace(rMonthlyPayment) + "원)"
+
+
+            // 총 월요금 (월요금 * 24)
+            const rAllMonthlyPrice = regPriceReplace(rMonthlyPrice * 24);
+            document.getElementById("model_all_monthly_price").innerText = rAllMonthlyPrice + "원";
+        }
+    }
+    xhr.send();
+
+    function onClickPaymentSystem(type) {
+        // 월 할부금
+        const rMonthlyPayment = Math.floor(filterData.price / 24);
+
+        // 요금제 선택시 가격 변경
+        if (type === "super_plan_basic") {
+            modelPayment = 80000;
+        } else if (type === "5g_slim_plus") {
+            modelPayment = 61000;
+        } else {
+            modelPayment = 55000
+        }
+
+        // 월 통신요금 (요금제 - 25%)
+        const rPaymentPrice = modelPayment - (modelPayment * 25 / 100);
+        document.getElementById("model_payment_price").innerText = regPriceReplace(rPaymentPrice) + "원";
+        // 요금할인 (25%)
+        const rSalePaymentPrice = modelPayment - rPaymentPrice;
+        document.getElementById("model_sale_price").innerText = "- " + regPriceReplace(rSalePaymentPrice) + "원";
+
+        // 월 요금 (요금제 - 25%) + 월할부금
+        const rMonthlyPrice = (modelPayment - (modelPayment * 25 / 100)) + rMonthlyPayment;
+        document.getElementById("model_monthly_price").innerText = "월 " + regPriceReplace(rMonthlyPrice) + "원";
+        // 월 요금 부가설명
+        document.getElementById("model_monthly_price_subscription").innerText =
+            "월 통신요금(" + regPriceReplace(rPaymentPrice) + "원) + 월 할부금(" + regPriceReplace(rMonthlyPayment) + "원)";
+
+
+        // 총 월요금 (월요금 * 24)
+        const rAllMonthlyPrice = regPriceReplace(rMonthlyPrice * 24);
+        document.getElementById("model_all_monthly_price").innerText = rAllMonthlyPrice + "원";
+
+        const payments = document.getElementsByClassName("payment");
+
+        for (let i = 0; i < payments.length; i++) {
+            if (payments[i].id === type) {
+                document.getElementById(payments[i].id).style.backgroundColor = "#ffffff";
+                document.getElementById(payments[i].id).style.borderColor = "#d90000";
+                document.getElementById(payments[i].id).style.color = "#d90000";
+                document.getElementById(payments[i].id).style.fontWeight = "bold";
+            } else {
+                document.getElementById(payments[i].id).style.backgroundColor = "#f4f4f4";
+                document.getElementById(payments[i].id).style.borderColor = "#d3d3d3";
+                document.getElementById(payments[i].id).style.color = "#777";
+                document.getElementById(payments[i].id).style.fontWeight = "normal";
+            }
+        }
+    }
+
+    function receipt() {
+        window.location.href = `https://shop.kt.com/unify/mobile.do?&inChkType=Y&lowVndrNo=11111112441&prodNo=` + filterData.productNo + `&supportType=01&vndrNo=DA00252`
+    }
+
+</script>
+
+<div class="section">
+    <?php include_once("inc/sub_loc2.php");?>
+    <?php include_once("inc/sub_menu.php");?>
+    <div id="page_wrap">
+
+        <body>
+            <div style="width:100%;background:#fafafa;">
+                <div id="location" style="padding:2% 0;">
+                    <div class="container">
+                        <div class="content">
+                            <div class="content_header" id="content_header">
+                                <p id="model_name"></p>
+                            </div>
+
+                            <div class="content_main">
+                                <div class="model_img">
+                                    <img id="img" />
+                                </div>
+                                <div class="model_content">
+
+                                    <div class="model_payment">
+                                        <div class="model_payment_list item">
+                                            <p class="title">요금제</p>
+                                            <div class="list">
+                                                <div id="super_plan_basic" class="payment"
+                                                    onclick="onClickPaymentSystem('super_plan_basic')">
+                                                    <p>슈퍼플랜베이직</p>
+                                                    <p>월 / 80,000원</p>
+                                                </div>
+                                                <div id="5g_slim_plus" class="payment"
+                                                    onclick="onClickPaymentSystem('5g_slim_plus')">
+                                                    <p>5G슬림 플러스</p>
+                                                    <p>월 / 61,000원</p>
+                                                </div>
+                                                <div id="5g_slim" class="payment"
+                                                    onclick="onClickPaymentSystem('5g_slim')">
+                                                    <p>5G 슬림</p>
+                                                    <p>월 / 55,000원</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="model_payment_price item">
+                                            <p class="title">월 통신요금</p>
+                                            <p class="price" id="model_payment_price"></p>
+                                        </div>
+                                        <div class="model_sale_price item">
+                                            <p class="title">요금할인 25%</p>
+                                            <p class="price" id="model_sale_price"></p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="model_installment_price item">
+                                        <p class="title">월 할부금 </p>
+                                        <p class="price" id="model_monthly_payment"></p>
+                                    </div>
+                                    <div class="model_price item">
+                                        <p class="title">출고가</p>
+                                        <p class="price" id="model_price"></p>
+                                    </div>
+
+                                    <div class="model_price item">
+                                        <p class="title">공시지원금 </p>
+                                        <p class="price" id="">0원</p>
+                                    </div>
+                                    <div class="model_price item">
+                                        <p class="title">추가지원금 </p>
+                                        <p class="price" id="">0원</p>
+                                    </div>
+
+                                    <div class="model_monthly_price item">
+                                        <p class="price" id="model_monthly_price"></p>
+                                        <p class="subscription" id="model_monthly_price_subscription"></p>
+                                    </div>
+                                    <div class="model_all_monthly_price item">
+                                        <p class="title">총 월요금 <span>(24개월 기준)</span></p>
+                                        <p class="price" id="model_all_monthly_price"></p>
+                                    </div>
+
+
+                                    <div class="notice">
+                                        <div class="notice_header">
+                                            <p>안내사항</p>
+                                        </div>
+                                        <div class="notice_main">
+                                            <p>
+                                                재고 및 상세문의는 추후 공지되는 URL 주소로 접수해주세요.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="bottoms">
+                                        <button class="content_btn" onClick="receipt()">
+                                            <p>접수하기 (가입신청서 작성)</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </div>
 </div>

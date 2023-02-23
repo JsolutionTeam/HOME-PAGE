@@ -1,144 +1,72 @@
-<?php include_once("inc/sub_loc.php");?>
-<hr>
-<style>
-	#history {
-		margin-bottom: 80px;
-	}
+	<?php include_once("inc/sub_loc.php");?>
+	<hr>
+	<style>
+		#history {margin-bottom:80px;}
+		.tree {width:1366px; margin:0 auto;}
+		.tree-limb {width:100%; overflow:hidden;}
+		.tree-year {float:left; width:20%; text-align:right;}
+		.tree-year span {margin-right:40px; font-size:60px; font-family:'europa','NotoKR',sans-serif; color:#ccc; line-height:100%;}
+		.tree-month {float:right; width:80%; padding-bottom:30px; box-sizing:border-box; border-left:1px solid #ccc;}
+		.tree-month .event {padding-left:50px; margin-bottom:30px; position:relative;}
 
-	.tree {
-		width: 1366px;
-		margin: 0 auto;
-	}
+		.tree-month .event::before {content:''; position:absolute; top:4px; left:0; display:block; width:9px; height:9px; margin-left:-6px; background:#fff; border-radius:100%; border:1px solid #666;}
+		.tree-month .event:first-child::before {top:0; width:9px; height:9px; margin-left:-12px; background:#fff; border:7px solid #e5e5e5;}
 
-	.tree-limb {
-		width: 100%;
-		overflow: hidden;
-	}
-
-	.tree-year {
-		float: left;
-		width: 20%;
-		text-align: right;
-	}
-
-	.tree-year span {
-		margin-right: 40px;
-		font-size: 60px;
-		font-family: 'europa', 'NotoKR', sans-serif;
-		color: #ccc;
-		line-height: 100%;
-	}
-
-	.tree-month {
-		float: right;
-		width: 80%;
-		padding-bottom: 30px;
-		box-sizing: border-box;
-		border-left: 1px solid #ccc;
-	}
-
-	.tree-month .event {
-		padding-left: 50px;
-		margin-bottom: 30px;
-		position: relative;
-	}
-
-	.tree-month .event::before {
-		content: '';
-		position: absolute;
-		top: 4px;
-		left: 0;
-		display: block;
-		width: 9px;
-		height: 9px;
-		margin-left: -6px;
-		background: #fff;
-		border-radius: 100%;
-		border: 1px solid #666;
-	}
-
-	.tree-month .event:first-child::before {
-		top: 0;
-		width: 9px;
-		height: 9px;
-		margin-left: -12px;
-		background: #fff;
-		border: 7px solid #e5e5e5;
-	}
-
-	.tree-month .event p {
-		margin-bottom: 8px;
-	}
-
-	.tree-month .event .date {
-		display: inline-block;
-		margin-right: 12px;
-		font-size: 16px;
-		font-family: 'europa', 'NotoKR', sans-serif;
-	}
-
-	.tree-month .event .frame {
-		margin-top: 12px;
-		overflow: hidden;
-	}
-
-	.tree-month .event .frame span {
-		float: left;
-	}
-
-	.tree-month .event .frame:nth-child(n+2) span {
-		margin-left: 4px;
-	}
-</style>
-<div id="page_wrap">
-	<div id="history">
-		<h3 class="stit"><b>연혁</b></h3>
-		<ul class="tree">
-			<li class="tree-limb">
-				<div class="tree-year"><span>2019</span></div>
-				<div class="tree-month">
-					<ol>
-						<li class="event">
-							<p><span class="date">03</span>기업부설연구소 설립(경운대학교 창업보육센터)</p>
-						</li>
-					</ol>
-				</div>
-			</li>
-			<li class="tree-limb">
-				<div class="tree-year"><span>2018</span></div>
-				<div class="tree-month">
-					<ol>
-						<li class="event">
-							<p><span class="date">03</span>주식회사 제이솔루션 법인사업자 설립</p>
-							<p><span class="date">03</span>한국생산성본부 회원사</p>
-						</li>
-						<li class="event">
-							<p><span class="date">07</span>이동통신 단말기의 통합 판매관리 방법 및 시스템 특허출원</p>
-							<p><span class="date">07</span>단말기 보관함 및 단말기 보관함을 이용한 이동통신 단말기의 통합 판매관리방법 특허출원</p>
-							<div class="frame"><img src="http://place-hold.it/160x120" alt="이미지"></div>
-						</li>
-						<li class="event">
-							<p><span class="date">09</span>중소기업진흥공단 벤처기업 선정</p>
-						</li>
-						<li class="event">
-							<p><span class="date">10</span>(재)대구테크노파크 경북대학교센터 입주</p>
-						</li>
-					</ol>
-				</div>
-			</li>
-			<li class="tree-limb">
-				<div class="tree-year"><span>2017</span></div>
-				<div class="tree-month">
-					<ol>
-						<li class="event">
-							<span class="date">04</span>단말기 재고관리방법 및 시스템 특허등록
-							<div class="frame">
-								<span><img src="http://place-hold.it/160x200" alt="이미지"></span>
-							</div>
-						</li>
-					</ol>
-				</div>
-			</li>
-		</ul>
+		.tree-month .event p {margin-bottom:8px;}
+		.tree-month .event .date {display:inline-block; margin-right:12px; font-size:16px; font-family:'europa','NotoKR',sans-serif;}
+		.tree-month .event .frame {margin-top:12px; overflow:hidden;}
+		.tree-month .event .frame span {float:left;}
+		.tree-month .event .frame:nth-child(n+2) span {margin-left:4px;}
+	</style>
+	<div id="page_wrap">
+		<div id="history">
+			<h3 class="stit"><b>연혁</b></h3>
+			<ul class="tree">
+				<li class="tree-limb">
+					<div class="tree-year"><span>2019</span></div>
+					<div class="tree-month">
+						<ol>
+							<li class="event">
+								<p><span class="date">03</span>기업부설연구소 설립(경운대학교 창업보육센터)</p>
+							</li>
+						</ol>
+					</div>
+				</li>
+				<li class="tree-limb">
+					<div class="tree-year"><span>2018</span></div>
+					<div class="tree-month">
+						<ol>
+							<li class="event">
+								<p><span class="date">03</span>주식회사 제이솔루션 법인사업자 설립</p>
+								<p><span class="date">03</span>한국생산성본부 회원사</p>
+							</li>
+							<li class="event">
+								<p><span class="date">07</span>이동통신 단말기의 통합 판매관리 방법 및 시스템 특허출원</p>
+								<p><span class="date">07</span>단말기 보관함 및 단말기 보관함을 이용한 이동통신 단말기의 통합 판매관리방법 특허출원</p>
+								<div class="frame"><img src="http://place-hold.it/160x120" alt="이미지"></div>
+							</li>
+							<li class="event">
+								<p><span class="date">09</span>중소기업진흥공단 벤처기업 선정</p>
+							</li>
+							<li class="event">
+								<p><span class="date">10</span>(재)대구테크노파크 경북대학교센터 입주</p>
+							</li>
+						</ol>
+					</div>
+				</li>
+				<li class="tree-limb">
+					<div class="tree-year"><span>2017</span></div>
+					<div class="tree-month">
+						<ol>
+							<li class="event">
+								<span class="date">04</span>단말기 재고관리방법 및 시스템 특허등록
+								<div class="frame">
+									<span><img src="http://place-hold.it/160x200" alt="이미지"></span>
+								</div>
+							</li>
+						</ol>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
-</div>

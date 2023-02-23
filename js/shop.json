@@ -1,0 +1,193 @@
+[
+  {
+    "img": "s23_.png",
+    "model": "SM-S911NK",
+    "name": "갤럭시 S23 256GB",
+    "price": 1155000,
+    "productNo": "WL00065586"
+  },
+  {
+    "img": "s23+.png",
+    "model": "SM-S916NK",
+    "name": "갤럭시 S23+ 256GB",
+    "price": 1353000,
+    "productNo": "WL00065588"
+  },
+  {
+    "img": "s23u.png",
+    "model": "SM-S918NK",
+    "name": "갤럭시 S23 Ultra 256GB",
+    "price": 1599400,
+    "productNo": "WL00065589"
+  },
+  {
+    "img": "s23_.png",
+    "model": "SM-S911NK-512",
+    "name": "갤럭시 S23 512GB",
+    "price": 1276000,
+    "productNo": "WL00065586"
+  },
+  {
+    "img": "s23+.png",
+    "model": "SM-S916NK-512",
+    "name": "갤럭시 S23+ 512GB",
+    "price": 1474000,
+    "productNo": "WL00065588"
+  },
+  {
+    "img": "s23u.png",
+    "model": "SM-S918NK-512",
+    "name": "갤럭시 S23 Ultra 512GB",
+    "price": 1720400,
+    "productNo": "WL00065589"
+  },
+  {
+    "img": "s22_.png",
+    "model": "SM-S901NK",
+    "name": "갤럭시 S22",
+    "price": 999900,
+    "productNo": "WL00062106"
+  },
+  {
+    "img": "s22+.png",
+    "model": "SM-S906NK",
+    "name": "갤럭시 S22+",
+    "price": 1199000,
+    "productNo": "WL00062107"
+  },
+  {
+    "img": "s22u.png",
+    "model": "SM-S908NK",
+    "name": "갤럭시 S22 Ultra",
+    "price": 1452000,
+    "productNo": "WL00062108"
+  },
+  {
+    "img": "s22u.png",
+    "model": "SM-S908NK-512",
+    "name": "갤럭시 S22 Ultra 512GB",
+    "price": 1551000,
+    "productNo": "WL00062108"
+  },
+  {
+    "img": "flip4.png",
+    "model": "SM-F721NK",
+    "name": "갤럭시 Z Flip4",
+    "price": 1353000,
+    "productNo": "WL00063965"
+  },
+  {
+    "img": "fold4.png",
+    "model": "SM-F936NK",
+    "name": "갤럭시 Z Fold4",
+    "price": 1998700,
+    "productNo": "WL00064042"
+  },
+  {
+    "img": "fold4.png",
+    "model": "SM-F936NK-512",
+    "name": "갤럭시 Z Fold4 512GB",
+    "price": 2119700,
+    "productNo": "WL00064042"
+  },
+  {
+    "img": "flip3.png",
+    "model": "SM-F711NK",
+    "name": "갤럭시 Z Flip3",
+    "price": 1155000
+  },
+  {
+    "img": "fold3.png",
+    "model": "SM-F926NK",
+    "name": "갤럭시 Z Fold3",
+    "price": 1899700
+  },
+  {
+    "img": "fold3.png",
+    "model": "SM-F926NK-512",
+    "name": "갤럭시 Z Fold3 512GB",
+    "price": 1998700
+  },
+  {
+    "img": "a33.png",
+    "model": "SM-A336NK",
+    "name": "갤럭시 A33 5G",
+    "price": 499400,
+    "productNo": "WL00063917"
+  },
+  {
+    "img": "jump2.png",
+    "model": "SM-M336k",
+    "name": "갤럭시 Jump2",
+    "price": 399300,
+    "productNo": "WL00063023"
+  },
+  {
+    "img": "iphone14.png",
+    "Column2": "애플",
+    "model": "AIP14-128",
+    "name": "iPhone 14 128G",
+    "price": 1243000,
+    "productNo": "WL00064392"
+  },
+  {
+    "img": "iphone14+.png",
+    "Column2": "애플",
+    "model": "AIP14PS-128",
+    "name": "iPhone 14 Plus 128G",
+    "price": 1342000,
+    "productNo": "WL00064403"
+  },
+  {
+    "img": "iphone14pro.png",
+    "Column2": "애플",
+    "model": "AIP14P-128",
+    "name": "iPhone 14 Pro 128G",
+    "price": 1540000,
+    "productNo": "WL00064404"
+  },
+  {
+    "img": "iphone14promax.png",
+    "Column2": "애플",
+    "model": "AIP14PM-128",
+    "name": "iPhone 14 Pro Max 128G",
+    "price": 1749000,
+    "productNo": "WL00064405"
+  },
+  {
+    "img": "iphonese3.png",
+    "Column2": "애플",
+    "model": "AIPSE3-128",
+    "name": "iPhone SE 3세대 128G",
+    "price": 495000,
+    "productNo": "WL00062698"
+  },
+  {
+    "img": "iphone13mini.png",
+    "Column2": "애플",
+    "model": "AIP13M-128",
+    "name": "iPhone 13 mini 128G",
+    "price": 726000
+  },
+  {
+    "img": "iphone13.png",
+    "Column2": "애플",
+    "model": "AIP13-128",
+    "name": "iPhone 13 128G",
+    "price": 748000
+  },
+  {
+    "img": "iphone13pro.png",
+    "Column2": "애플",
+    "model": "AIP13P-128",
+    "name": "iPhone 13 Pro 128G",
+    "price": 1012000
+  },
+  {
+    "img": "iphone13promax.png",
+    "Column2": "애플",
+    "model": "AIP13PM-128",
+    "name": "iPhone 13 Pro Max 128G",
+    "price": 1144000
+  }
+]

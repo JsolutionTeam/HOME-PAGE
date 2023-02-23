@@ -1,198 +1,104 @@
-<?php include_once("inc/sub_loc.php");?>
-<style>
-	.field_step {
-		padding-bottom: 60px;
-		text-align: center;
-	}
+	<?php include_once("inc/sub_loc.php");?>
+	<style>
+		.field_step {padding-bottom:60px; text-align:center;}
+		.field_step .top_p {padding:1.2em 1em; margin-bottom:60px; line-height:150%; background:#eee; font-weight:lighter; font-size:24px; position:relative; color:#000;}
+		.field_step .top_p::after {content:''; border:20px solid transparent; border-top-color:#eee; position:absolute; left:50%; bottom:-40px; margin-left:-20px;}
+		.field_step .top_p span {position:relative;}
+		.field_step ul {width:100%; overflow:hidden;}
+		.field_step ul li {float:left; width:24%;}
+		.field_step ul > li:nth-child(n+2) {margin-left:1.333333333333333%;}
+		.field_step ul li span {display:block; height:70px; line-height:70px; border-radius:20px 20px 0 0; background:#2548a7; font-weight:lighter; font-size:24px; color:#fff;}
+		.field_step ul li ol {width:100%; overflow:hidden; padding:20px 0; border:1px solid #dedede; border-top:0; border-radius:0 0 20px 20px; margin-bottom:30px; box-sizing:border-box;}
+		.field_step ul li ol li {display:block; width:100%; margin:6px 0; font-size:16px; color:#666; font-weight:bold; font-size:15px;}
+		.field_step ul li ol li::after {content:''; display:block; width:28px; height:28px; margin:8px auto 0; background:url("../images/sub/ico_field_pluse.png") 50% no-repeat;}
+		.field_step ul li ol li:last-child::after {display:none;}
+		.field_step ul li p {background:#fff; color:#f92593; font-size:20px; height:60px; line-height:60px; border-radius:30px; border:1px solid #f5c5de; box-sizing:border-box;}
+		.field_step ul li p:hover {background:#f92593; color:#fff; border-color:#f92593;}
+		.field_step ul li:nth-child(1) ol li:nth-child(1),
+		.field_step ul li:nth-child(2) ol li:nth-child(1),
+		.field_step ul li:nth-child(3) ol li:nth-child(2),
+		.field_step ul li:nth-child(4) ol li:nth-child(3) {color:#f92593;}
+	</style>
+	<div id="page_wrap">
+		<div id="field">
+			<h3 class="stit"><b>사업분야</b></h3>
+			<div class="field_step">
+				<p class="top_p"><span>기업 상황을 분석하여 사업환경에 적합한 S/W와 H/W를<br>개발 및 구축하여 효율성 향상을 지원하는 기업 맞춤 컨설팅</span></p>
+				<ul>
+					<li>
+						<span>기업 SWOT분석</span>
+						<ol>
+							<li>사업 규모 / 상황</li>
+							<li>여건 / 제한 사항</li>
+							<li>시장확인 / BM분석</li>
+						</ol>
+						<p>기업 상황 분석</p>
+					</li>
+					<li>
+						<span>통신 상품 분석</span>
+						<ol>
+							<li>최신 ICT 기술분석</li>
+							<li>IT, 통신, 전자기기</li>
+							<li>사용자 편의여부</li>
+						</ol>
+						<p>통신 적합도 분석</p>
+					</li>
+					<li>
+						<span>최적 솔루션 제안</span>
+						<ol>
+							<li>적용 기술 제안</li>
+							<li>최적 솔루션 제안</li>
+							<li>커스터 마이징</li>
+						</ol>
+						<p>맞춤 상품 컨설팅</p>
+					</li>
+					<li>
+						<span>기업 이윤극대화</span>
+						<ol>
+							<li>고정비 절감</li>
+							<li>업무 효율성 향상</li>
+							<li>시너지 / 비용절감</li>
+						</ol>
+						<p>경쟁 우위 달성</p>
+					</li>
+				</ul>
+			</div>
 
-	.field_step .top_p {
-		padding: 1.2em 1em;
-		margin-bottom: 60px;
-		line-height: 150%;
-		background: #eee;
-		font-weight: lighter;
-		font-size: 24px;
-		position: relative;
-		color: #000;
-	}
-
-	.field_step .top_p::after {
-		content: '';
-		border: 20px solid transparent;
-		border-top-color: #eee;
-		position: absolute;
-		left: 50%;
-		bottom: -40px;
-		margin-left: -20px;
-	}
-
-	.field_step .top_p span {
-		position: relative;
-	}
-
-	.field_step ul {
-		width: 100%;
-		overflow: hidden;
-	}
-
-	.field_step ul li {
-		float: left;
-		width: 24%;
-	}
-
-	.field_step ul>li:nth-child(n+2) {
-		margin-left: 1.333333333333333%;
-	}
-
-	.field_step ul li span {
-		display: block;
-		height: 70px;
-		line-height: 70px;
-		border-radius: 20px 20px 0 0;
-		background: #2548a7;
-		font-weight: lighter;
-		font-size: 24px;
-		color: #fff;
-	}
-
-	.field_step ul li ol {
-		width: 100%;
-		overflow: hidden;
-		padding: 20px 0;
-		border: 1px solid #dedede;
-		border-top: 0;
-		border-radius: 0 0 20px 20px;
-		margin-bottom: 30px;
-		box-sizing: border-box;
-	}
-
-	.field_step ul li ol li {
-		display: block;
-		width: 100%;
-		margin: 6px 0;
-		font-size: 16px;
-		color: #666;
-		font-weight: bold;
-		font-size: 15px;
-	}
-
-	.field_step ul li ol li::after {
-		content: '';
-		display: block;
-		width: 28px;
-		height: 28px;
-		margin: 8px auto 0;
-		background: url("../images/sub/ico_field_pluse.png") 50% no-repeat;
-	}
-
-	.field_step ul li ol li:last-child::after {
-		display: none;
-	}
-
-	.field_step ul li p {
-		background: #fff;
-		color: #f92593;
-		font-size: 20px;
-		height: 60px;
-		line-height: 60px;
-		border-radius: 30px;
-		border: 1px solid #f5c5de;
-		box-sizing: border-box;
-	}
-
-	.field_step ul li p:hover {
-		background: #f92593;
-		color: #fff;
-		border-color: #f92593;
-	}
-
-	.field_step ul li:nth-child(1) ol li:nth-child(1),
-	.field_step ul li:nth-child(2) ol li:nth-child(1),
-	.field_step ul li:nth-child(3) ol li:nth-child(2),
-	.field_step ul li:nth-child(4) ol li:nth-child(3) {
-		color: #f92593;
-	}
-</style>
-<div id="page_wrap">
-	<div id="field">
-		<h3 class="stit"><b>사업분야</b></h3>
-		<div class="field_step">
-			<p class="top_p"><span>기업 상황을 분석하여 사업환경에 적합한 S/W와 H/W를<br>개발 및 구축하여 효율성 향상을 지원하는 기업 맞춤 컨설팅</span></p>
-			<ul>
-				<li>
-					<span>기업 SWOT분석</span>
-					<ol>
-						<li>사업 규모 / 상황</li>
-						<li>여건 / 제한 사항</li>
-						<li>시장확인 / BM분석</li>
-					</ol>
-					<p>기업 상황 분석</p>
-				</li>
-				<li>
-					<span>통신 상품 분석</span>
-					<ol>
-						<li>최신 ICT 기술분석</li>
-						<li>IT, 통신, 전자기기</li>
-						<li>사용자 편의여부</li>
-					</ol>
-					<p>통신 적합도 분석</p>
-				</li>
-				<li>
-					<span>최적 솔루션 제안</span>
-					<ol>
-						<li>적용 기술 제안</li>
-						<li>최적 솔루션 제안</li>
-						<li>커스터 마이징</li>
-					</ol>
-					<p>맞춤 상품 컨설팅</p>
-				</li>
-				<li>
-					<span>기업 이윤극대화</span>
-					<ol>
-						<li>고정비 절감</li>
-						<li>업무 효율성 향상</li>
-						<li>시너지 / 비용절감</li>
-					</ol>
-					<p>경쟁 우위 달성</p>
-				</li>
-			</ul>
-		</div>
-
-		<div class="field_group">
-			<div class="field_item">
-				<div class="txt_box_lst">
-					<h4>B2B 통신상품/네트워크</h4>
-					<ul>
-						<li>법인/임직원 휴대폰, 태블릿, 웨어러블</li>
-						<li>기업인터넷, 전화, 서버, 보안장치 등</li>
-						<li>IOT기기, 홈네트워크, 무선통신장비 등</li>
-					</ul>
-				</div>
-				<div class="txt_box_lst">
-					<h4>B2B 전자제품/조달 입찰</h4>
-					<ul>
-						<li>나라장터, 조달, 입찰, 기업구매 견적</li>
-						<li>사무기기, PC/모니터류, 전산용품 등</li>
-						<li>가전, 빌트인, 숙박, 병원, 관공서용 등</li>
-					</ul>
-				</div>
-				<div class="txt_box_lst">
-					<h4>ICT 솔루션</h4>
-					<ul>
-						<li>빅데이터 기반 기능형 물류관리 플랫폼</li>
-						<li>스마트 물류, 팩토리, 에너지 플랫폼</li>
-						<li>SI, ERP, 그룹웨어, 전자결재, 차량관제 등</li>
-					</ul>
-				</div>
-				<div class="txt_box_lst">
-					<h4>디지털 사이니지 솔루션</h4>
-					<ul>
-						<li>LED 전광판, 디지털 샤이니지, DID 구축</li>
-						<li>상황실, 방송실, 회의실, 영상 솔루션 구축</li>
-						<li>키오스크, 터치스크린, 무인화 장비 구축</li>
-					</ul>
+			<div class="field_group">
+				<div class="field_item">
+					<div class="txt_box_lst">
+						<h4>B2B 통신상품/네트워크</h4>
+						<ul>
+							<li>법인/임직원 휴대폰, 태블릿, 웨어러블</li>
+							<li>기업인터넷, 전화, 서버, 보안장치 등</li>
+							<li>IOT기기, 홈네트워크, 무선통신장비 등</li>
+						</ul>
+					</div>
+					<div class="txt_box_lst">
+						<h4>B2B 전자제품/조달 입찰</h4>
+						<ul>
+							<li>나라장터, 조달, 입찰, 기업구매 견적</li>
+							<li>사무기기, PC/모니터류, 전산용품 등</li>
+							<li>가전, 빌트인, 숙박, 병원, 관공서용 등</li>
+						</ul>
+					</div>
+					<div class="txt_box_lst">
+						<h4>ICT 솔루션</h4>
+						<ul>
+							<li>빅데이터 기반 기능형 물류관리 플랫폼</li>
+							<li>스마트 물류, 팩토리, 에너지 플랫폼</li>
+							<li>SI, ERP, 그룹웨어, 전자결재, 차량관제 등</li>
+						</ul>
+					</div>
+					<div class="txt_box_lst">
+						<h4>디지털 사이니지 솔루션</h4>
+						<ul>
+							<li>LED 전광판, 디지털 샤이니지, DID 구축</li>
+							<li>상황실, 방송실, 회의실, 영상 솔루션 구축</li>
+							<li>키오스크, 터치스크린, 무인화 장비 구축</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
